@@ -2,11 +2,15 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {AiTwotoneExperiment} from 'react-icons/ai'
 import {FaBars, FaTimes} from 'react-icons/fa'
+import {Button} from '../Button'
 import './Navbar.css'
 
 function Navbar(){
     const [click, setClick] = useState(false)
+    const [button, setBotton] = useState(true)
+
     const handleClick = ()=> setClick(!click)
+    const closeMoblieMenu = ()=> setClick(false)
     return (
         <>
         <div className="navbar">
