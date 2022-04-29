@@ -11,6 +11,12 @@ function Navbar(){
 
     const handleClick = ()=> setClick(!click)
     const closeMoblieMenu = ()=> setClick(false)
+
+    const showButton = () => {
+        if(window.innerWidth <= 650) {
+            
+        }
+    }
     return (
         <>
         <div className="navbar">
