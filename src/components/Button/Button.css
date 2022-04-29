@@ -54,4 +54,49 @@
     font-size: 20px;
 }
 
-.btn--large:hover,
+.btn--large:hover, .btn--medium:hover, .btn--mobile:hover{
+    transition: all 0.3s ease-out;
+    background: #fff ;
+    color: #242424;
+} 
+
+.btn--wide:hover{
+    color: #fff;
+    background-color: #f00946;
+    transition: all 0.2 ease-out;
+}
+
+.blue{
+    background-color: #276afb;
+    color: #fff;
+    border: none;
+}
+
+.red{
+    background-color: #f00946;
+    color: #fff;
+    border: none;
+}
+
+.primary{
+    background-color: #242424;
+    color: #fff;
+    border: none;
+}
+
+.primary:hover{
+    background-color: #fff;
+    color: #242424;
+    border: none;
+}
+
+
+.green{
+    background-color: #25ce4a;
+    color: #fff;
+    border: none;
+}
+
+.green:hover{
+    background-color: #242424;
+}
