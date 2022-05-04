@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {AiTwotoneExperiment} from 'react-icons/ai'
 import {FaBars, FaTimes} from 'react-icons/fa'
-import {Button} from '../Button'
+import {Button} from './Button'
 import './Navbar.css'
 
 function Navbar(){
@@ -14,9 +14,15 @@ function Navbar(){
 
     const showButton = () => {
         if(window.innerWidth <= 650) {
-            
+            setBotton(false)
+        }
+
+        else{
+            setBotton(true)
         }
     }
+ 
+    window.addEventListener('resize',showButton) 
     return (
         <>
         <div className="navbar">
