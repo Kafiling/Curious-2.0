@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import {AiTwotoneExperiment} from 'react-icons/ai'
 import {FaBars, FaTimes} from 'react-icons/fa'
 import {Button} from './Button'
+
 import './Navbar.css'
 
 function Navbar(){
@@ -21,6 +22,10 @@ function Navbar(){
             setBotton(true)
         }
     }
+
+    useEffect(() => {
+        showButton()
+    }, [])
  
     window.addEventListener('resize',showButton) 
     return (
@@ -36,22 +41,22 @@ function Navbar(){
                 </div>
                 <ul className = {click ? 'nav-menu active' : 'nav-menu'}>
                     <li className='nav-item'>
-                        <Link to= '/' className="navbar-links">
+                        <Link to= '/' className="nav-links">
                             Home
                         </Link>
                     </li>
                     <li className='nav-item'>
-                        <Link to= '/Playground' className="navbar-links">
+                        <Link to= '/Playground' className="nav-links">
                             Playground
                         </Link>
                     </li>
                     <li className='nav-item'>
-                        <Link to= '/aboutUs' className="navbar-links">
+                        <Link to= '/aboutUs' className="nav-links">
                             About Us
                         </Link>
                     </li>
                     <li className='nav-item'>
-                        <Link to= '/help' className="navbar-links">
+                        <Link to= '/help' className="nav-links">
                             Help
                         </Link>
                     </li>
