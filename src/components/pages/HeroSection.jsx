@@ -3,7 +3,7 @@ import {Button} from './Button'
 import { Link } from 'react-router-dom'
 import './HeroSection.css'
 function HeroSection({
-    lightBg, topLine , lightText , lightTextDesc , headline , buttonLabel , img , alt , imgStart
+    lightBg, topLine , lightText , lightTextDesc , headline , description , buttonLabel , img , alt , imgStart
 }) {
   return (
     <>

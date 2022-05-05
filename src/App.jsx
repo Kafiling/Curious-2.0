@@ -8,6 +8,9 @@ import './App.css'
 //import components
 import Navbar from './components/pages/Navbar'
 
+//import pages
+import Home from './components/pages/HomePage/Home'
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -16,7 +19,7 @@ function App() {
     <Router>
       <Navbar/>
       <Routes >
-          <Route path='/' />
+          <Route path='/' element={<Home/>} exact></Route>
       </Routes>
     </Router>
         
