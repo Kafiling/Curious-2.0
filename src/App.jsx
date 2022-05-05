@@ -6,7 +6,7 @@ import './App.css'
 //import custom hooks or context provider
 
 //import components
-import Navbar from './components/Navbar'
+import Navbar from './components/pages/Navbar'
 
 function App() {
   const [count, setCount] = useState(0)
