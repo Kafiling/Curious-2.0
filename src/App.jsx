@@ -10,7 +10,7 @@ import Navbar from './components/pages/Navbar'
 
 //import pages
 import Home from './components/pages/HomePage/Home'
-
+import Footer from './components/pages/Footer/Footer'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -21,6 +21,7 @@ function App() {
       <Routes >
           <Route path='/' element={<Home/>} exact></Route>
       </Routes>
+      <Footer/>
     </Router>
         
       
