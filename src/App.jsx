@@ -22,9 +22,7 @@ function App() {
           <Route path='/' element={<Home/>} exact></Route>
       </Routes>
       <Footer/>
-    </Router>
-        <p>dsds<br/></p>
-      
+    </Router>      
     </div>
   )
 }
