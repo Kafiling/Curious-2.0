@@ -9,35 +9,35 @@ export const homeObjOne = {
     buttonLabel : 'เข้าห้องเรียน',
     imgStart: '',
     img : 'images/to_the_moon.svg',
-    alt : 'Card pic'
+    alt : 'Curious'
 }
 
 export const homeObjTwo = {
     lightBg: false,
     lightText: true,
     lightTextDesc: true,
-    topLine: '100% SECURE',
-    headline: 'Stay protected 24/7 anywhere anytime',
+    topLine: 'เรียนรู้ทุกที่ทุกเวลา',
+    headline: 'อยู่ที่ไหนก็เรียนได้',
     description:
-      'We have you covered no matter where you are located. Over 140 locations worldwide to ensure you have access anytime',
-    buttonLabel: 'Learn More',
+      'Curious สามารถเข้าถึงได้ทุกที่ ทุกเวลาเพียงแค่เชื่อมต่อกับอินเตอร์เน็ตผ่านอุปกรณ์ต่างๆ เช่น คอมพิวเตอร์ แท็บเล็ต',
+    buttonLabel: 'เริ่มเรียนตอนนี้',
     imgStart: '',
     img: 'images/suburbs.svg',
-    alt: 'Vault'
+    alt: 'Learn Anywhere'
   };
   
   export const homeObjThree = {
     lightBg: true,
     lightText: false,
     lightTextDesc: false,
-    topLine: 'EASY SETUP',
-    headline: 'Super fast and simple onboarding process',
+    topLine: 'สนุกกับการทดลอง',
+    headline: 'การทดลองเสมือนจริงโดยใช้ Physic engine',
     description:
-      "Get everything set up and ready in under 10 minutes. All you need to do is add your information and you're ready to go.",
-    buttonLabel: 'Start Now',
+      "เราใช้ Physic engine ในการคำนวณสมการทางฟิสิกส์เพื่อจำลองการทดลองได้อย่างสมจริงและสามารถรับข้อมูลจากทางผู้ใช้ไปประมวณผลได้อีกด้วย",
+    buttonLabel: 'เริ่มการทดลองได้',
     imgStart: 'start',
     img: 'images/augmented_reality.svg',
-    alt: 'Vault'
+    alt: 'Physic engine'
   };
   
   export const homeObjFour = {
@@ -48,7 +48,7 @@ export const homeObjTwo = {
     headline: 'Every transaction is stored on our secure cloud database',
     description:
       'Never ever have to worry again about saved reciepts. We store your data, so you can access it anytime.',
-    buttonLabel: 'Sign Up Now',
+    buttonLabel: 'เข้าใช้งาน',
     imgStart: 'start',
     img: 'images/instant_analysis.svg',
     alt: 'Vault'
