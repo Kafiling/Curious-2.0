@@ -44,10 +44,10 @@ export const homeObjTwo = {
     lightBg: false,
     lightText: true,
     lightTextDesc: true,
-    topLine: 'DATA ANALYTICS',
-    headline: 'Every transaction is stored on our secure cloud database',
+    topLine: 'เป็นเพื่อนชี้ทางให้กับคุณ',
+    headline: 'วิเคราะห์จุดเด่น/จุดด้อยเพื่อคุณด้วยทฤษฎีของ Bayes',
     description:
-      'Never ever have to worry again about saved reciepts. We store your data, so you can access it anytime.',
+      'นำข้อมูลการตอบและเวลาที่ใช้มาคำนวณเปรียบเทียบกับผู้อื่นเพื่อช่วยนำทางผู้ใช้สู่ความสำเร็จ!',
     buttonLabel: 'เข้าใช้งาน',
     imgStart: 'start',
     img: 'images/instant_analysis.svg',

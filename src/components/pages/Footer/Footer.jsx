@@ -14,7 +14,7 @@ function Footer() {
               Curious
             </Link>
           </div>
-          <small className='website-rights'>Curious Project</small>
+          <small className='website-rights'>Made With ♥ By Kafiling</small>
         </div>
       </section>
     </div>
