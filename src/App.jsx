@@ -12,6 +12,7 @@ import Navbar from './components/pages/Navbar'
 import Home from './components/pages/HomePage/Home'
 import Playground from './components/pages/Playground/Playground'
 import Footer from './components/pages/Footer/Footer'
+import AboutUs from './components/pages/AboutUs/AboutUs'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -22,6 +23,7 @@ function App() {
       <Routes >
           <Route path='/' element={<Home/>} exact></Route>
           <Route path='/playground' element={<Playground/>} exact></Route>
+          <Route path='/aboutUs' element={<AboutUs/>} exact></Route>
       </Routes>
       <Footer/>
     </Router>      
