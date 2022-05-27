@@ -4,7 +4,7 @@ export const homeObjOne = {
     lightTextDesc : true,
     topLine : 'Made With ♥',
     headline : 'By Kafiling',
-    description : 'โปรเจคนี้สร้างด้วยความชอบและ ความรักต่อวิชาฟิสิกส์และดวามต้องการจะผลักดันการศึกษาให้สนุก เรียบง่าย และสามารถประยุกต์ใช้ในชีวิตประจำวันได้',
+    description : 'โปรเจคนี้สร้างด้วยความชอบและความรักต่อวิชาฟิสิกส์และ ความต้องการจะผลักดันการศึกษาให้สนุก เรียบง่าย และสามารถประยุกต์ใช้ในชีวิตประจำวันได้',
     buttonLabel : 'ไปที่ Github',
     imgStart: '',
     img : 'https://firebasestorage.googleapis.com/v0/b/keep-curious-v2.appspot.com/o/Homepage%2Fquitting_time.svg?alt=media&token=f82ff19f-ddcc-4c4a-991f-078d46500ffe',
