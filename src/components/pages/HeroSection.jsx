@@ -17,7 +17,7 @@ function HeroSection({
                             <h1 className= {lightText ? 'heading' : 'heading dark'}>{headline}</h1>
                             <h1 className= {lightText ? 'heading' : 'heading dark'} style = {{}}>{headline2}</h1>
                             <p className={lightTextDesc ? 'home__hero-subtitle' : 'home__hero-subtitle dark'}>{description}</p>
-                            <Link to = '/log-in'>
+                            <Link to = '/login'>
                                 <Button buttonSize = 'btn--wide'  buttonColor='blue'>{buttonLabel}</Button>
                             </Link>
                         </div>
