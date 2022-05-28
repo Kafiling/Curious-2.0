@@ -1,0 +1,10 @@
+.login-container {
+    height: calc(100vh - 80px - 150px);
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+.navbar-icon {
+    margin-right: 0.5rem;
+  }
