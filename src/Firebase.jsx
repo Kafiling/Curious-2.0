@@ -1,6 +1,9 @@
+import { createContext, useState , useEffect } from 'react'
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -19,3 +22,26 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+
+//ประกาศตัวแปรของ Firebase Service
+export const auth = getAuth(app);
+export const db = getFirestore(app);
+export const AuthContext = createContext()
+
+export const AuthProvider = ({ children }) => {
+const [currentUser, SetCurrentUser] = useState(null)
+  
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      SetCurrentUser(user)
+    })
+   
+  }, [])
+
+return (
+<AuthContext.Provider value = {{currentUser}}>
+  {children}
+</AuthContext.Provider>
+)
+}
+ 

@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Routes ,Route } from 'react-router-dom'
 //import src
 import './App.css'
 //import custom hooks or context provider
-
+  //Import Firebase SDK
+  import { AuthProvider, auth } from './Firebase';
 //import components
 import Navbar from './components/pages/Navbar'
 
@@ -20,7 +21,8 @@ function App() {
   return (
     <div className="App">
     <Router>
-      <Navbar/>
+    <AuthProvider>
+    <Navbar/>
       <Routes >
           <Route path='/' element={<Home/>} exact></Route>
           <Route path='/playground' element={<Playground/>} exact></Route>
@@ -28,7 +30,9 @@ function App() {
           <Route path='/login' element={<Login/>} exact></Route>
       </Routes>
       <Footer/>
+    </AuthProvider>
     </Router>      
+    
     </div>
   )
 }
