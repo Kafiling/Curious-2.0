@@ -15,6 +15,7 @@ import Playground from './components/pages/Playground/Playground'
 import Footer from './components/pages/Footer/Footer'
 import AboutUs from './components/pages/AboutUs/AboutUs'
 import Login from './components/pages/Login/Login'
+import Help from './components/pages/Help/Help'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -28,6 +29,7 @@ function App() {
           <Route path='/playground' element={<Playground/>} exact></Route>
           <Route path='/aboutUs' element={<AboutUs/>} exact></Route>
           <Route path='/login' element={<Login/>} exact></Route>
+          <Route path='/help' element={<Help/>} exact></Route>
       </Routes>
       <Footer/>
     </AuthProvider>
