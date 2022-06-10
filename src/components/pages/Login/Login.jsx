@@ -24,7 +24,8 @@ function Login() {
       <Button buttonSize = 'btn--wide'  buttonColor='blue' ><BsGoogle className='navbar-icon'  />Login with google&#160;&#160;&#160;</Button><br/><br/><br/><br/>
       <Button buttonSize = 'btn--wide'  buttonColor='blue' ><BsFacebook className='navbar-icon'  />Login with facebook</Button>
       </div><br/><br/><br/>
-      <p>"The roots of education are bitter, but the fruit is sweet." - Aristotle</p>
+      <p>"The roots of education are bitter, but the fruit is sweet." - Aristotle</p><br/>
+      <a href='https://keep-curious.web.app/'><p>คลิกที่นี้เพื่อเข้าถึง Curious v1.0</p></a>
       </IconContext.Provider>
     </div>
 
