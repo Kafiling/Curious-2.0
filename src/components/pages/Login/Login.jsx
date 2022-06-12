@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import { deepOrange, deepPurple } from '@mui/material/colors';
@@ -9,7 +9,7 @@ import { IconContext } from 'react-icons/lib'
 import {Button} from './../Button'
 import './Login.css'
 
-import {auth} from './../../../Firebase'
+import {auth,AuthContext} from './../../../Firebase'
 import {signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
 
 function Login() {
@@ -40,7 +40,11 @@ function Login() {
       }
     })
   }
-
+  const {currentUser} = useContext(AuthContext)
+  if(currentUser){
+      return window.location.replace("/courses");
+  }
+  
   return (
     <div className='login-container'>
     <IconContext.Provider value={{colr : '#fff'}}>
