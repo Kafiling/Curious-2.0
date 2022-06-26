@@ -30,7 +30,7 @@ export default function Courses() {
         alignItems="center"
       >
         <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
+        <CardActionArea href='/courses/project'>
         <CardMedia
           component="img"
           height="280"
