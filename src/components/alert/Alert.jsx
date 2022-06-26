@@ -49,4 +49,40 @@ import {auth,AuthContext} from './../../Firebase'
             </div>
           );
         }
+
+
+        export function ShootAlertWIP() {
+            const [open, setOpen] = React.useState(true);
+            
+            const handleClickOpen = () => {
+              setOpen(true);
+            };
+          
+            const handleClose = () => {
+              setOpen(false);
+              window.location.replace("/courses")
+            };
+  
+            return (
+              <div>
+                <Dialog
+                  open={open}
+                  TransitionComponent={Transition}
+                  keepMounted
+                  onClose={handleClose}
+                  aria-describedby="alert-dialog-slide-description"
+                >
+                  <DialogTitle>{"Coming soon"}</DialogTitle>
+                  <DialogContent>
+                    <DialogContentText id="alert-dialog-slide-description">
+                    ขออภัยกิจกรรรมนี้กำลังอยู่ในการพัฒนา! 
+                    </DialogContentText>
+                  </DialogContent>
+                  <DialogActions>
+                    <Button onClick={handleClose}>กลับ</Button>
+                  </DialogActions>
+                </Dialog>
+              </div>
+            );
+          }
         

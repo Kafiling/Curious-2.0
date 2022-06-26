@@ -10,6 +10,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import './Courses.css'
+import ShootAlertWIP from './../../alert/Alert'
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
   ...theme.typography.body2,
@@ -19,6 +20,7 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function Courses() {
+   
   return (
     <div className='courses-container'>
       <Stack
@@ -31,7 +33,7 @@ export default function Courses() {
       <CardActionArea>
         <CardMedia
           component="img"
-          height="140"
+          height="280"
           image="/static/images/cards/contemplative-reptile.jpg"
           alt="green iguana"
         />
@@ -51,41 +53,22 @@ export default function Courses() {
       <CardActionArea>
         <CardMedia
           component="img"
-          height="140"
-          image="/static/images/cards/contemplative-reptile.jpg"
-          alt="green iguana"
+          height="280"
+          image="https://firebasestorage.googleapis.com/v0/b/keep-curious-v2.appspot.com/o/Homepage%2Fwarning.svg?alt=media&token=bd2a340d-cf84-41a9-a3e1-4b19261b89ab"
+          alt="Coming soon"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Lizard
+            Coming soon
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+          "Formal education will make you a living; <br/>self-education will make you a fortune."<br/> 
           </Typography>
         </CardContent>
       </CardActionArea>
     </Card>
 
-    <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="140"
-          image="/static/images/cards/contemplative-reptile.jpg"
-          alt="green iguana"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
+   
       </Stack>
     </div>
   );
