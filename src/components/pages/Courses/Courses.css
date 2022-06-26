@@ -1,0 +1,13 @@
+.courses-container {
+    height: clamp(700px,75vh,100vh);
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+.navbar-icon {
+    margin-right: 0.5rem;
+  }
+.loginBtnCon{
+    display: block;
+}
