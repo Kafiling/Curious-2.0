@@ -30,6 +30,7 @@ function App() {
           <Route path='/aboutUs' element={<AboutUs/>} exact></Route>
           <Route path='/login' element={<Login/>} exact></Route>
           <Route path='/help' element={<Help/>} exact></Route>
+          <Route path='/courses' element={<Courses/>} exact></Route>
       </Routes>
       <Footer/>
     </AuthProvider>
