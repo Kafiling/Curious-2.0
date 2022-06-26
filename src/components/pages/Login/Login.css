@@ -1,5 +1,5 @@
 .login-container {
-    height: calc(100vh - 80px - 150px);
+    height: clamp(700px,75vh,100vh);
     padding-top: 25px;
     padding-bottom: 25px;
     text-align: center;
