@@ -16,6 +16,8 @@ import Footer from './components/pages/Footer/Footer'
 import AboutUs from './components/pages/AboutUs/AboutUs'
 import Login from './components/pages/Login/Login'
 import Help from './components/pages/Help/Help'
+import Courses from './components/pages/Courses/Courses'
+import ShootAlertPDPA from './components/alert/Alert';
 function App() {
   const [count, setCount] = useState(0)
 
@@ -23,6 +25,7 @@ function App() {
     <div className="App">
     <Router>
     <AuthProvider>
+    
     <Navbar/>
       <Routes >
           <Route path='/' element={<Home/>} exact></Route>

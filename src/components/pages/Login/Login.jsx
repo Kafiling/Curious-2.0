@@ -12,6 +12,8 @@ import './Login.css'
 import {auth,AuthContext} from './../../../Firebase'
 import {signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
 
+import ShootAlertPDPA from './../../alert/Alert'
+
 function Login() {
 
   const signInWithGoogle = () =>{
@@ -42,11 +44,12 @@ function Login() {
   }
   const {currentUser} = useContext(AuthContext)
   if(currentUser){
-      return window.location.replace("/courses");
+      return <ShootAlertPDPA/>
   }
   
   return (
     <div className='login-container'>
+     
     <IconContext.Provider value={{colr : '#fff'}}>
       <Avatar sx={{ bgcolor: deepOrange[500] ,width: 64, height: 64 }} style={{margin : 'auto'}}><FiLogIn className='navbar-icon' size={'2rem'} /></Avatar>
       <br/>
