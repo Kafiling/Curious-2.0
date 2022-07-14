@@ -30,7 +30,7 @@ export default function Courses() {
         alignItems="center"
       >
         <Card sx={{ maxWidth: 345 }}>
-        <CardActionArea href='/courses/project'>
+        <CardActionArea href='/courses/projectile_1'>
         <CardMedia
           component="img"
           height="280"
@@ -39,11 +39,10 @@ export default function Courses() {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Lizard
+            ปืนใหญ่และการเคลื่อนที่วิถีโค้ง
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            ทำความเข้าใจ ทดลอง และ พิสูจน์ เกี่ยวกับการเคลื่อนที่วิถีโค้ง และการประยุกต์ใช้
           </Typography>
         </CardContent>
       </CardActionArea>

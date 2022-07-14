@@ -18,6 +18,7 @@ import Login from './components/pages/Login/Login'
 import Help from './components/pages/Help/Help'
 import Courses from './components/pages/Courses/Courses'
 import ShootAlertPDPA from './components/alert/Alert';
+import Projectile from './Contents/Projectile';
 function App() {
   const [count, setCount] = useState(0)
 
@@ -34,6 +35,7 @@ function App() {
           <Route path='/login' element={<Login/>} exact></Route>
           <Route path='/help' element={<Help/>} exact></Route>
           <Route path='/courses' element={<Courses/>} exact></Route>
+          <Route path='/courses/projectile_1' element={<Projectile/>} exact></Route>
       </Routes>
       <Footer/>
     </AuthProvider>
