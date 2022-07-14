@@ -1,5 +1,4 @@
 .courses-container {
-    height: clamp(700px,75vh,100vh);
     padding-top: 25px;
     padding-bottom: 25px;
     text-align: center;
@@ -11,3 +10,11 @@
 .loginBtnCon{
     display: block;
 }
+
+@media only screen and (min-width: 768px) {
+    .courses-container {
+    height: clamp(700px,75vh,100vh);
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: center;
+}}

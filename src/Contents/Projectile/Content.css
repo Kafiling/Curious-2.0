@@ -1,9 +1,20 @@
 .content-wrapper{
     width: 100vw
 }
+.content-wrapper {
+    font-size: calc(15px + 0.390625vw);
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
 
 @media only screen and (min-width: 768px) {
     .content-wrapper{
-        width: 10%
+        display: flex;
+        position: relative;
+        flex-wrap: wrap;
+        width: 70%;
+        margin: auto;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
     }
 }
