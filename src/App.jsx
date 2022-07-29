@@ -17,8 +17,7 @@ import AboutUs from './components/pages/AboutUs/AboutUs'
 import Login from './components/pages/Login/Login'
 import Help from './components/pages/Help/Help'
 import Courses from './components/pages/Courses/Courses'
-import ShootAlertPDPA from './components/alert/Alert';
-import Projectile from './Contents/Projectile';
+import Projectile from './Contents/Projectile/Page';
 function App() {
   const [count, setCount] = useState(0)
 
