@@ -110,3 +110,23 @@
     height: 100%;
     width: 100% ;
 }
+@media only screen and (min-width: 768px) {
+.left {
+    display: inline-block;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+ }
+
+ .middle {
+    display: inline-block;
+    justify-self: center;
+ }
+ 
+.right {
+    position: absolute;
+    right: 0px;
+    display: inline-block;
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+  }
+}

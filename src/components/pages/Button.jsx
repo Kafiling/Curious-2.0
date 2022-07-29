@@ -7,13 +7,16 @@ const SIZES = ['btn--medium', 'btn--large', 'btn--mobile', 'btn--wide'];
 
 const COLOR = ['primary', 'blue', 'red', 'green'];
 
+const POS = ['left', 'middle', 'right'];
+
 export const Button = ({
   children,
   type,
   onClick,
   buttonStyle,
   buttonSize,
-  buttonColor
+  buttonColor,
+  buttonPos
 }) => {
   const checkButtonStyle = STYLES.includes(buttonStyle)? buttonStyle: STYLES[0];
 
@@ -21,9 +24,10 @@ export const Button = ({
 
   const checkButtonColor = COLOR.includes(buttonColor) ? buttonColor : null;
 
+  const checkButtonPos = POS.includes(buttonPos) ? buttonPos : null;
   return (
     <button
-      className={`btn ${checkButtonStyle} ${checkButtonSize} ${checkButtonColor}`}
+      className={`btn ${checkButtonStyle} ${checkButtonSize} ${checkButtonColor}  ${checkButtonPos}`}
       onClick={onClick}
       type={type}
     >
