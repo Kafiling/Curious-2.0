@@ -2,18 +2,26 @@
     background-color: #FBF595;
 }
 
-.highlight-yellow{
+.highlight-orange{
     background-color: #ffc57a;
 }
 
-.highlight-yellow{
+.highlight-red{
     background-color: #FFABAB;
 }
 
-.highlight-yellow{
+.highlight-green{
     background-color: #BFFCC6;
 }
 
-.highlight-yellow{
+.highlight-blue{
     background-color: #A79AFF;
+}
+
+.highlight-block{
+    display: inline-block;
+  width: 100%;
+  height: 100px;
+  padding: 5px;
+  border: 1px solid grey;    
 }
