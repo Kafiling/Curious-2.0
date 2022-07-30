@@ -16,6 +16,10 @@ var [page, setPage] = useState(1);
     return (<Page2/>)
     break;
 
+    case 3:
+      return (<Page3/>)
+      break;
+
     default:
     return (<Page404/>)
       break;
@@ -64,14 +68,46 @@ var [page, setPage] = useState(1);
         src="https://steamuserimages-a.akamaihd.net/ugc/781871757549675033/5F6623AB658C5F0278A46826103FC9735368A5C8/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" 
         alt="display image" 
         />
-        <p><span className='highlight-red highlight-block '>Disclaimer : การเคลื่อนที่แนวโค้งในกิจกรรมนี้เป้นการเคลื่อนที่แนวโค้งอย่างง่าย นั้นคือจะไม่คำนึงถึงผลของแรงต้านอากาศ และ การสูญเสียพลังงานให้สิ่งแวดล้อม เพื่อให้เห็นความสัมพันธุ์เชิงตัวแปรในการเคลื่อนที่อย่างชัดเจน
-        </span>
-        </p>
+        
         <div className='btn-warpper'>
         <Button buttonSize = 'btn--wide'  buttonColor='blue' buttonPos='left' onClick = {() => setPage(1)} >Previous page</Button>
         <Button buttonSize = 'btn--wide'  buttonColor='green' buttonPos='right' onClick = {() => setPage(3)} >Next page</Button>
         </div>
         
+  
+        </div>
+  </>
+  )
+  }
+
+  function Page3(){
+    return (
+  <>
+  <div className="ProgessBar"><progress value="30" max="100"></progress></div>
+  <div className="content-wrapper">
+        <h2>การเคลื่อนที่วิถีโค้ง (Projectile Motion)</h2>
+        <p>ลองสังเกตการลักษณะเคลื่อนที่รวมถึงการเปลี่ยนแปลงของความเร็วความเร่งของลูกปืนใหญ่จาก Simulation ด้านล่างนี้</p>
+        <img 
+        className='content-img'
+        src="https://steamuserimages-a.akamaihd.net/ugc/781871757549675033/5F6623AB658C5F0278A46826103FC9735368A5C8/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" 
+        alt="display image" 
+        />
+        <p>จะสังเกตเห็นว่าการเคลื่อนที่ของลูกกระสุนปืนใหญ่มีลักษณะโค้งพาราโบลา เมื่อวิเคราห์การเคลื่อนที่ของกระสุนแล้วจะพบว่ากระสุนออกจากกระบอกปืนด้วยความเร็วแนวเฉียงดังรูป
+
+        </p>
+
+        <img 
+        className='content-img'
+        src="https://steamuserimages-a.akamaihd.net/ugc/781871757549675033/5F6623AB658C5F0278A46826103FC9735368A5C8/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" 
+        alt="display image" 
+        />
+
+        <div className='btn-warpper'>
+        <Button buttonSize = 'btn--wide'  buttonColor='blue' buttonPos='left' onClick = {() => setPage(2)} >Previous page</Button>
+        <Button buttonSize = 'btn--wide'  buttonColor='green' buttonPos='right' onClick = {() => setPage(4)} >Next page</Button>
+        </div>
+        
+     
   
         </div>
   </>
