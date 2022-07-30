@@ -25,6 +25,31 @@
     right: 0%;
  }
 
+ .ProgessBar{
+    position: relative;
+    width: 100vw;
+    height: calc(5px + 0.390625vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  progress[value] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 20px;
+  }
+  progress[value]::-webkit-progress-bar {
+    background-color: #d1d1d1;
+    border-radius: 4px;
+  
+  }
+  progress[value]::-webkit-progress-value {
+   background-color: #276afb;
+  
+  }
+
 
 @media only screen and (min-width: 768px) {
     .content-wrapper{
