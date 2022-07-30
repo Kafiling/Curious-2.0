@@ -2,6 +2,8 @@ import React ,{useState , useRef, useContext}from 'react'
 import './Content.css'
 import './../../components/Highlight.css'
 import {Button} from './../../components/pages/Button'
+
+import {App as MatterP3} from './CanvaPage3';
 export default function Projectile() {
 // Set Page
 var [page, setPage] = useState(1);
@@ -87,11 +89,7 @@ var [page, setPage] = useState(1);
   <div className="content-wrapper">
         <h2>การเคลื่อนที่วิถีโค้ง (Projectile Motion)</h2>
         <p>ลองสังเกตการลักษณะเคลื่อนที่รวมถึงการเปลี่ยนแปลงของความเร็วความเร่งของลูกปืนใหญ่จาก Simulation ด้านล่างนี้</p>
-        <img 
-        className='content-img'
-        src="https://steamuserimages-a.akamaihd.net/ugc/781871757549675033/5F6623AB658C5F0278A46826103FC9735368A5C8/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" 
-        alt="display image" 
-        />
+        <MatterP3/>
         <p>จะสังเกตเห็นว่าการเคลื่อนที่ของลูกกระสุนปืนใหญ่มีลักษณะโค้งพาราโบลา เมื่อวิเคราห์การเคลื่อนที่ของกระสุนแล้วจะพบว่ากระสุนออกจากกระบอกปืนด้วยความเร็วแนวเฉียงดังรูป
 
         </p>
