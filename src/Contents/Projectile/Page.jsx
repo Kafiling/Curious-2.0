@@ -3,7 +3,7 @@ import './Content.css'
 import './../../components/Highlight.css'
 import {Button} from './../../components/pages/Button'
 
-import {App as MatterP3} from './CanvaPage3';
+import {Scene as MatterP3} from './CanvaPage3';
 export default function Projectile() {
 // Set Page
 var [page, setPage] = useState(1);

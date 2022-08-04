@@ -1,58 +1,75 @@
-import * as React from "react";
-import {
-  Engine,
-  RenderClones,
-  Walls,
-  Rectangle,
-  Circle,
-  Constraint
-} from "react-matter-js";
-import { Global, css } from "@emotion/core";
+import React from "react";
+import ReactDOM from "react-dom";
+import Matter from "matter-js";
 
-const App = () => {
-  const width = 600;
-  const height = 400;
-  return (
-    <div>
-      <Global
-        styles={css`
-          body {
-            background: #111;
+export class Scene extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+    this.sceneRef = React.createRef()
+  }
+
+  componentDidMount() {
+    var Engine = Matter.Engine,
+      Render = Matter.Render,
+      World = Matter.World,
+      Bodies = Matter.Bodies,
+      Mouse = Matter.Mouse,
+      MouseConstraint = Matter.MouseConstraint;
+
+    var engine = Engine.create({
+      // positionIterations: 20
+    });
+
+    var render = Render.create({
+      element: this.sceneRef.current,
+      engine: engine,
+      options: {
+        width: 600,
+        height: 600,
+        wireframes: false
+      }
+    });
+
+    var ballA = Bodies.circle(210, 100, 30, { restitution: 0.5 });
+    var ballB = Bodies.circle(110, 50, 30, { restitution: 0.5 });
+    World.add(engine.world, [
+      // walls
+      Bodies.rectangle(200, 0, 600, 50, { isStatic: true }),
+      Bodies.rectangle(200, 600, 600, 50, { isStatic: true }),
+      Bodies.rectangle(260, 300, 50, 600, { isStatic: true }),
+      Bodies.rectangle(0, 300, 50, 600, { isStatic: true })
+    ]);
+
+    World.add(engine.world, [ballA, ballB]);
+
+    // add mouse control
+    var mouse = Mouse.create(render.canvas),
+      mouseConstraint = MouseConstraint.create(engine, {
+        mouse: mouse,
+        constraint: {
+          stiffness: 0.2,
+          render: {
+            visible: false
           }
-        `}
-      />
-      <Engine options={{}}>
-        <RenderClones
-          enableMouse
-          options={{
-            width,
-            height,
-            background: "transparent",
-            wireframeBackground: "transparent"
-          }}
-        >
-          <Walls x={0} y={0} width={width} height={height} wallWidth={25} />
-          <Circle
-            clone
-            x={500}
-            y={100}
-            radius={50}
-            className={css``}
-            cloneClass={css`
-              fill: #f06;
-            `}
-          />
-          <Constraint>
-            <Circle clone x={100} y={100} radius={50} />
-            <Rectangle clone x={300} y={100} width={100} height={100} />
-          </Constraint>
-        </RenderClones>
-      </Engine>
-      <div>
-        <a href="https://github.com/slikts/react-matter-js">react-matter-js</a>
-      </div>
-    </div>
-  );
-};
+        }
+      });
 
-export default App;
+    World.add(engine.world, mouseConstraint);
+
+    Matter.Events.on(mouseConstraint, "mousedown", function(event) {
+      World.add(engine.world, Bodies.circle(150, 50, 30, { restitution: 0.7 }));
+    });
+
+    Matter.Runner.run(engine);
+
+    Render.run(render);
+  }
+
+  render() {
+    return (<>
+    <div ref={this.sceneRef} />
+    </>
+    );
+  }
+}
