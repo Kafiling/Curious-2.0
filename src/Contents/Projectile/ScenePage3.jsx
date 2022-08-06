@@ -55,7 +55,6 @@ export const Scene = () => {
 
     setContraints(boxRef.current.getBoundingClientRect());
     setScene(render);
-
     window.addEventListener('resize', handleResize);
 
   }, []);
@@ -112,7 +111,10 @@ export const Scene = () => {
       scene.canvas.height = height;
       const circle =  Matter.Bodies.circle(PARTICLE_SIZE, ((height + STATIC_DENSITY -150 / 2)-PARTICLE_SIZE), PARTICLE_SIZE, {
         restitution: PARTICLE_BOUNCYNESS,
-        frictionAir: 0
+        frictionAir: 0,
+        render: {
+          options:{showVelocity: true}
+        }
       })
       Matter.World.add(
         scene.engine.world,circle
