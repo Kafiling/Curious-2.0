@@ -1,11 +1,20 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Matter from 'matter-js';
+import { color } from '@mui/system';
 
 const STATIC_DENSITY = 15;
-const PARTICLE_SIZE = 6;
+const PARTICLE_SIZE = 20;
 const PARTICLE_BOUNCYNESS = 0.9;
 
 export const Scene = () => {
+  
+  var Engine = Matter.Engine;
+  var Render = Matter.Render;
+  var World = Matter.World;
+  var Bodies = Matter.Bodies;
+  var engine = Engine.create({});
+
+
   const boxRef = useRef(null);
   const canvasRef = useRef(null);
 
@@ -23,19 +32,11 @@ export const Scene = () => {
   };
 
   useEffect(() => {
-    let Engine = Matter.Engine;
-    let Render = Matter.Render;
-    let World = Matter.World;
-    let Bodies = Matter.Bodies;
-
-    let engine = Engine.create({});
-
-    let render = Render.create({
+    var render = Render.create({
       element: boxRef.current,
       engine: engine,
       canvas: canvasRef.current,
       options: {
-        background: 'transparent',
         wireframes: false
       }
     });
@@ -43,19 +44,20 @@ export const Scene = () => {
     const floor = Bodies.rectangle(0, 0, 0, STATIC_DENSITY, {
       isStatic: true,
       render: {
-        fillStyle: 'blue'
+       
       }
     });
 
     World.add(engine.world, [floor]);
 
-    Engine.run(engine);
+    Matter.Runner.run(engine)
     Render.run(render);
 
     setContraints(boxRef.current.getBoundingClientRect());
     setScene(render);
 
     window.addEventListener('resize', handleResize);
+
   }, []);
 
   useEffect(() => {
@@ -81,7 +83,7 @@ export const Scene = () => {
 
       Matter.Body.setPosition(floor, {
         x: width / 2,
-        y: height + STATIC_DENSITY / 2
+        y: height + STATIC_DENSITY -150 / 2
       });
 
       Matter.Body.setVertices(floor, [
@@ -96,16 +98,39 @@ export const Scene = () => {
   useEffect(() => {
     // Add a new "ball" everytime `someStateValue` changes
     if (scene) {
-      let { width } = constraints;
-      let randomX = Math.floor(Math.random() * -width) + width;
+      //let { width } = constraints;
+      //let randomX = Math.floor(Math.random() * -width) + width;
+
+      let { width, height } = constraints;
+
+      // Dynamically update canvas and bounds
+      scene.bounds.max.x = width;
+      scene.bounds.max.y = height;
+      scene.options.width = width;
+      scene.options.height = height;
+      scene.canvas.width = width;
+      scene.canvas.height = height;
+      const circle =  Matter.Bodies.circle(PARTICLE_SIZE, ((height + STATIC_DENSITY -150 / 2)-PARTICLE_SIZE), PARTICLE_SIZE, {
+        restitution: PARTICLE_BOUNCYNESS,
+        frictionAir: 0
+      })
       Matter.World.add(
-        scene.engine.world,
-        Matter.Bodies.circle(randomX, -PARTICLE_SIZE, PARTICLE_SIZE, {
-          restitution: PARTICLE_BOUNCYNESS
-        })
+        scene.engine.world,circle
       );
-    }
+      
+     //set velocity base on viewport size
+      Matter.Body.setVelocity(circle, {x: width/400, y: -height/200 })
+      
+      }
   }, [someStateValue]);
+ 
+  
+  Matter.Events.on( engine, 'afterUpdate', function(event) {
+    engine.timing.timeScale = 0.2;
+    })
+
+  
+   
 
   return (
     <div
@@ -115,37 +140,7 @@ export const Scene = () => {
         padding: '8px'
       }}
     >
-      <div style={{ textAlign: 'center' }}>Checkout</div>
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr auto',
-          rowGap: '16px',
-          marginBottom: '32px'
-        }}
-      >
-        <div>SubTitle</div>
-        <div>£xxx</div>
-        <div>Discount</div>
-        <div>£xxx</div>
-        <div>Total</div>
-        <div>£xxx</div>
-      </div>
-
-      <button
-        style={{
-          cursor: 'pointer',
-          display: 'block',
-          textAlign: 'center',
-          marginBottom: '16px',
-          width: '100%'
-        }}
-        onClick={() => handleClick()}
-      >
-        Checkout
-      </button>
-
-      <div
+       <div
         ref={boxRef}
         style={{
           position: 'absolute',
@@ -153,11 +148,28 @@ export const Scene = () => {
           left: 0,
           width: '100%',
           height: '100%',
-          pointerEvents: 'none'
+          pointerEvents: 'none',
+          zIndex:'-1'
         }}
       >
         <canvas ref={canvasRef} />
       </div>
+      <div style={{ textAlign: 'center' , color: 'white'}}>Projectile</div>
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      <button
+        style={{
+          cursor: 'pointer',
+          display: 'block',
+          textAlign: 'center',
+          marginBottom: '0px',
+          width: '100%',
+        }}
+        onClick={() => handleClick()}
+      >
+       Fire!
+      </button>
+
+     
     </div>
   );
 };

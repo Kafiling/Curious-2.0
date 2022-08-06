@@ -72,4 +72,9 @@
         width: 100%;
         height: auto;
      }
+     .MatterScene{
+      width: 900px;
+      height: auto;
+      display: block;
+    }
 }
