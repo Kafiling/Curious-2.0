@@ -37,7 +37,9 @@ export const Scene = () => {
       engine: engine,
       canvas: canvasRef.current,
       options: {
-        wireframes: false
+        wireframes: true,
+        showVelocity: true,
+        showStats: true
       }
     });
 
