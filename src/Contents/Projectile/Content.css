@@ -56,6 +56,15 @@
     display: block;
   }
 
+.QuestionFormContainer{
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+}
+
 
 @media only screen and (min-width: 768px) {
     .content-wrapper{

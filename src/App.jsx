@@ -6,6 +6,15 @@ import './App.css'
 //import custom hooks or context provider
   //Import Firebase SDK
   import { AuthProvider, auth } from './Firebase';
+  import { createTheme, ThemeProvider} from '@mui/material/styles';
+
+  const THEME = createTheme({
+    typography: {
+     "fontFamily": `'Prompt', sans-serif`,
+     fontSize: 'calc(15px + 0.390625vw)'
+    }
+ });
+
 //import components
 import Navbar from './components/pages/Navbar'
 
@@ -18,6 +27,9 @@ import Login from './components/pages/Login/Login'
 import Help from './components/pages/Help/Help'
 import Courses from './components/pages/Courses/Courses'
 import Projectile from './Contents/Projectile/Page';
+
+
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -25,6 +37,7 @@ function App() {
     <div className="App">
     <Router>
     <AuthProvider>
+    <ThemeProvider theme={THEME}>
     
     <Navbar/>
       <Routes >
@@ -37,6 +50,7 @@ function App() {
           <Route path='/courses/projectile_1' element={<Projectile/>} exact></Route>
       </Routes>
       <Footer/>
+    </ThemeProvider>
     </AuthProvider>
     </Router>      
     
