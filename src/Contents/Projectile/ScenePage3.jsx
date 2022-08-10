@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Matter from 'matter-js';
 import { color } from '@mui/system';
+import Checkbox from '@mui/material/Checkbox';
 
 const STATIC_DENSITY = 15;
 const PARTICLE_SIZE = 20;
@@ -31,6 +32,8 @@ export const Scene = () => {
     setSomeStateValue(!someStateValue);
   };
 
+  
+
   useEffect(() => {
     var render = Render.create({
       element: boxRef.current,
@@ -41,7 +44,7 @@ export const Scene = () => {
         showVelocity: true,
         showVelocityX: true,
         showVelocityY: true,
-        showStats: true
+        showStats: false
       }
     });
 
@@ -135,9 +138,6 @@ export const Scene = () => {
     engine.timing.timeScale = 0.2;
     })
 
-  
-   
-
   return (
     <div
       style={{
@@ -161,7 +161,9 @@ export const Scene = () => {
         <canvas ref={canvasRef} />
       </div>
       <div style={{ textAlign: 'center' , color: 'white'}}>Projectile</div>
-      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      <p style={{color: 'cornflowerblue'}}>&#9632; ความเร็วลัพธ์</p>
+      <p style={{color: 'orange'}}>&#9632; ความเร็วแกน X,Y</p>
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/>
       <button
         style={{
           cursor: 'pointer',
@@ -172,10 +174,8 @@ export const Scene = () => {
         }}
         onClick={() => handleClick()}
       >
-       Fire!
+       ยิงกระสุน
       </button>
-
-     
     </div>
   );
 };
