@@ -39,6 +39,8 @@ export const Scene = () => {
       options: {
         wireframes: true,
         showVelocity: true,
+        showVelocityX: true,
+        showVelocityY: true,
         showStats: true
       }
     });
