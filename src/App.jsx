@@ -15,6 +15,8 @@ import './App.css'
     }
  });
 
+ import {MathJaxContext} from 'better-react-mathjax'
+
 //import components
 import Navbar from './components/pages/Navbar'
 
@@ -37,6 +39,7 @@ function App() {
     <div className="App">
     <Router>
     <AuthProvider>
+    <MathJaxContext>
     <ThemeProvider theme={THEME}>
     
     <Navbar/>
@@ -50,7 +53,9 @@ function App() {
           <Route path='/courses/projectile_1' element={<Projectile/>} exact></Route>
       </Routes>
       <Footer/>
+
     </ThemeProvider>
+    </MathJaxContext>
     </AuthProvider>
     </Router>      
     

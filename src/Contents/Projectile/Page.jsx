@@ -4,6 +4,8 @@ import './../../components/Highlight.css'
 import {Button} from './../../components/pages/Button'
 import QuestionForm from './../../components/QuestionForm'
 import {Scene as MatterP3} from './ScenePage3';
+import {MathJax} from 'better-react-mathjax'
+
 export default function Projectile() {
 // Set Page
 var [page, setPage] = useState(1);
@@ -155,8 +157,8 @@ var [page, setPage] = useState(1);
        
 
         <div className='btn-warpper'>
-        <Button buttonSize = 'btn--wide'  buttonColor='blue' buttonPos='left' onClick = {() => setPage(2)} >Previous page</Button>
-        <Button buttonSize = 'btn--wide'  buttonColor='green' buttonPos='right' onClick = {() => setPage(4)} >Next page</Button>
+        <Button buttonSize = 'btn--wide'  buttonColor='blue' buttonPos='left' onClick = {() => setPage(3)} >Previous page</Button>
+        <Button buttonSize = 'btn--wide'  buttonColor='green' buttonPos='right' onClick = {() => setPage(5)} >Next page</Button>
         </div>
         
      
@@ -165,29 +167,64 @@ var [page, setPage] = useState(1);
   </>
   )
   }
+/*
+<MathJax>
+     {`Inside a MathJax block element, one might use both Latex inline math, such
+          as \\(x\\) or \\(\\frac{25x}{10} = 2^{10}\\), but then also switch
+          to Latex display math, like
+          \\[\\sum_{n = 100}^{1000}\\left(\\frac{10\\sqrt{n}}{n}\\right)\\]
+          ... and then continue with inline math.`}
 
-  function Page5(){
+</MathJax>
+*/
+
+//<MathJax inline>{"\\(5x * 10 \\approx 42\\)"}</MathJax>
+
+function Page5(){
     return (
   <>
   <div className="ProgessBar"><progress value="50" max="100"></progress></div>
   <div className="content-wrapper">
         <h2>การเคลื่อนที่วิถีโค้ง (Projectile Motion)</h2>
-        <p>ลองสังเกตการลักษณะเคลื่อนที่รวมถึงการเปลี่ยนแปลงของความเร็วความเร่งของลูกปืนใหญ่จาก Simulation ด้านล่างนี้</p>
-       <div className='MatterScene'><MatterP3/></div>
-        
-        <p>จะสังเกตเห็นว่าการเคลื่อนที่ของลูกกระสุนปืนใหญ่มีลักษณะโค้งพาราโบลา เมื่อวิเคราห์การเคลื่อนที่ของกระสุนแล้วจะพบว่ากระสุนออกจากกระบอกปืนด้วยความเร็วแนวเฉียงดังรูป
+        <p>การคำนวณการเคลื่อนที่แนวโค้ง (Projectile) ต้องแยกคิดการเคลื่อนที่ 2 แนวการเคลื่อนที่</p>
+        <span className='highlight-yellow highlight-block '>
+        <MathJax>
+          {`โดยแนวราบ (แกน x) ไม่มีความเร่ง (\\(a=0\\) , v คงที่ ) ใช้สมการการเคลื่อนที่ดังนี้
+          \\[v_{x} = \\frac{s_{x}}{t}\\]  
+          `}
+          </MathJax>
+          <p>โดย <br/>
+          <MathJax inline>{'\\(v_{x}\\)'}</MathJax> แทน ความเร็วแกนราบ<br/>
+          <MathJax inline>{'\\(s_{x}\\)'}</MathJax> แทน ระยะแกนราบ<br/>
+          <MathJax inline>{'\\(t\\)'}</MathJax> แทน เวลา
+          </p>
+          </span>
 
-        </p>
+          <span className='highlight-green highlight-block '>
+        <MathJax>
+          {`ส่วนแนวดิ่ง (แกน y) มีความเร่ง  ใช้สมการการเคลื่อนที่ดังนี้
+          \\[v_{y} = u_{y} + a_{y}\\cdot t \\tag{1}\\]  
+          \\[s_{y} = u_{y}\\cdot t + \\frac{1}{2}a_{y}\\cdot t^{2} \\tag{2}\\]
+          \\[s_{y} = v_{y}\\cdot t - \\frac{1}{2}a_{y}\\cdot t^{2} \\tag{3}\\]
+          \\[s_{y} = (\\frac{u_{y} + v_{y}}{2})\\cdot t \\tag{4}\\]
+          \\[v_{y}^{2} = u_{y}^{2} + 2a\\cdot s \\tag{5}\\]
+          
+          `}
+          </MathJax>
+          <p>โดย <br/>
+          <MathJax inline>{'\\(u_{x}\\)'}</MathJax> แทน ความเร็วต้นแกนดิ่ง<br/>
+          <MathJax inline>{'\\(v_{x}\\)'}</MathJax> แทน ความเร็วปลายแกนดิ่ง<br/>
+          <MathJax inline>{'\\(s_{x}\\)'}</MathJax> แทน ระยะแกนดิ่ง<br/>
+          <MathJax inline>{'\\(a_{x}\\)'}</MathJax> แทน ความเร่งแกนดิ่ง<br/>
+          <MathJax inline>{'\\(t\\)'}</MathJax> แทน เวลา
+          </p>
+          </span>
 
-        <img 
-        className='content-img'
-        src="https://steamuserimages-a.akamaihd.net/ugc/781871757549675033/5F6623AB658C5F0278A46826103FC9735368A5C8/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" 
-        alt="display image" 
-        />
-
+      
+        <p><br/><span className='highlight-blue'>โดยทั้งแกนราบและดิ่งมีความสัมพันธุ์คือใช้ตัวแปร t (เวลาร่วมกัน)</span></p>
         <div className='btn-warpper'>
-        <Button buttonSize = 'btn--wide'  buttonColor='blue' buttonPos='left' onClick = {() => setPage(2)} >Previous page</Button>
-        <Button buttonSize = 'btn--wide'  buttonColor='green' buttonPos='right' onClick = {() => setPage(4)} >Next page</Button>
+        <Button buttonSize = 'btn--wide'  buttonColor='blue' buttonPos='left' onClick = {() => setPage(4)} >Previous page</Button>
+        <Button buttonSize = 'btn--wide'  buttonColor='green' buttonPos='right' onClick = {() => setPage(6)} >Next page</Button>
         </div>
         
      
