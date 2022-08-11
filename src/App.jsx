@@ -16,6 +16,9 @@ import './App.css'
  });
 
  import {MathJaxContext} from 'better-react-mathjax'
+ const MathJaxConfig = {
+  output: 'Svg'
+};
 
 //import components
 import Navbar from './components/pages/Navbar'
@@ -39,7 +42,7 @@ function App() {
     <div className="App">
     <Router>
     <AuthProvider>
-    <MathJaxContext>
+    <MathJaxContext config={MathJaxConfig}>
     <ThemeProvider theme={THEME}>
     
     <Navbar/>

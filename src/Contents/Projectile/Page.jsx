@@ -32,6 +32,10 @@ var [page, setPage] = useState(1);
       return (<Page5/>)
       break;
 
+    case 6:
+      return (<Page6/>)
+      break;     
+
     default:
     return (<Page404/>)
       break;
@@ -225,6 +229,40 @@ function Page5(){
         <div className='btn-warpper'>
         <Button buttonSize = 'btn--wide'  buttonColor='blue' buttonPos='left' onClick = {() => setPage(4)} >Previous page</Button>
         <Button buttonSize = 'btn--wide'  buttonColor='green' buttonPos='right' onClick = {() => setPage(6)} >Next page</Button>
+        </div>
+        
+     
+  
+        </div>
+  </>
+  )
+  }
+
+  function Page6(){
+    return (
+  <>
+  <div className="ProgessBar"><progress value="30" max="100"></progress></div>
+  <div className="content-wrapper">
+        <h2>การเคลื่อนที่วิถีโค้ง (Projectile Motion)</h2>
+        <p>เมื่อทราบดังนั้นแล้ว เราลองนำสิ่งที่เรียนมาใช้ดูดีกว่า
+         ลูกกระสุนปืนใหญ่ถูกยิงออกมาจากปากระบอก โดยถือว่ากระบอกมีความสูงน้อยมาก โดยกระสุนยิงออกจากกระบอกด้วยความเร็วแกนราบ 20 m/s พบว่าลูกกระสุนตกห่างจากกระบอกปืน 200 m เมื่อกระสุนออกจากกระบอกปืนมีความเร็วแกนดิ่งเท่าไร 
+         (กำหนด <MathJax inline>{'\\(g = 10 m/s^{2} \\)'}</MathJax>)
+        </p>
+       <div className='MatterScene'><MatterP3/></div>
+        
+        <p>จะสังเกตเห็นว่าการเคลื่อนที่ของลูกกระสุนปืนใหญ่มีลักษณะโค้งพาราโบลา เมื่อวิเคราห์การเคลื่อนที่ของกระสุนแล้วจะพบว่ากระสุนออกจากกระบอกปืนด้วยความเร็วแนวเฉียงดังรูป
+
+        </p>
+
+        <img 
+        className='content-img'
+        src="https://steamuserimages-a.akamaihd.net/ugc/781871757549675033/5F6623AB658C5F0278A46826103FC9735368A5C8/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" 
+        alt="display image" 
+        />
+
+        <div className='btn-warpper'>
+        <Button buttonSize = 'btn--wide'  buttonColor='blue' buttonPos='left' onClick = {() => setPage(2)} >Previous page</Button>
+        <Button buttonSize = 'btn--wide'  buttonColor='green' buttonPos='right' onClick = {() => setPage(4)} >Next page</Button>
         </div>
         
      
