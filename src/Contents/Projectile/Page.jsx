@@ -4,6 +4,7 @@ import './../../components/Highlight.css'
 import {Button} from './../../components/pages/Button'
 import QuestionForm from './../../components/QuestionForm'
 import {Scene as MatterP3} from './ScenePage3';
+import {App as MatterP6} from './ScenePage6';
 import {MathJax} from 'better-react-mathjax'
 
 export default function Projectile() {
@@ -248,7 +249,7 @@ function Page5(){
          ลูกกระสุนปืนใหญ่ถูกยิงออกมาจากปากระบอก โดยถือว่ากระบอกมีความสูงน้อยมาก โดยกระสุนยิงออกจากกระบอกด้วยความเร็วแกนราบ 20 m/s พบว่าลูกกระสุนตกห่างจากกระบอกปืน 200 m เมื่อกระสุนออกจากกระบอกปืนมีความเร็วแกนดิ่งเท่าไร 
          (กำหนด <MathJax inline>{'\\(g = 10 m/s^{2} \\)'}</MathJax>)
         </p>
-       <div className='MatterScene'><MatterP3/></div>
+       <div className='MatterScene'><MatterP6/></div>
         
         <p>จะสังเกตเห็นว่าการเคลื่อนที่ของลูกกระสุนปืนใหญ่มีลักษณะโค้งพาราโบลา เมื่อวิเคราห์การเคลื่อนที่ของกระสุนแล้วจะพบว่ากระสุนออกจากกระบอกปืนด้วยความเร็วแนวเฉียงดังรูป
 
