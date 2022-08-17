@@ -44,6 +44,10 @@ export const BlocklyApp = () => {
             kind: "block",
             type: "value",
           },
+          {
+            kind: "block",
+            type: "imported_value",
+          },
         ],
       },
     ],

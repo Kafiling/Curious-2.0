@@ -1,6 +1,5 @@
 import Blockly from 'blockly';
 
-
 Blockly.Blocks['value'] = {
   init: function() {
     this.appendDummyInput()
@@ -66,6 +65,19 @@ Blockly.Blocks['v_stable'] = {
   }
 };
 
+Blockly.Blocks['imported_value'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("นำค่าตัวแปร")
+        .appendField(new Blockly.FieldDropdown([["Sx","Sx"], ["Vx","Vx"], ["t","t"], ["Sy","Sy"], ["Uy","Uy"], ["Vy","Vy"], ["Ay","Ay"]]), "Value")
+        .appendField("จากด้านบนมาแทนในสมการ");
+    this.setOutput(true, null);
+    this.setColour(65);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
 Blockly.JavaScript['value'] = function(block) {
   var dropdown_value = block.getFieldValue('Value');
   var number_name = block.getFieldValue('NAME');
@@ -93,4 +105,12 @@ Blockly.JavaScript['v_stable'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
   var code = '...;\n';
   return code;
+};
+
+Blockly.JavaScript['imported_value'] = function(block) {
+  var dropdown_value = block.getFieldValue('Value');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
