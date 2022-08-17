@@ -23,48 +23,22 @@ export const BlocklyApp = () => {
   const [javascriptCode, setJavascriptCode] = useState("");
 
   const initialXml =
-  '<xml xmlns="http://www.w3.org/1999/xhtml"><block type="text" x="70" y="30"><field name="TEXT"></field></block></xml>';
+  '<xml xmlns="https://developers.google.com/blockly/xml" id="workspaceBlocks" style="display: none"><block type="a_stable" id="@%:]1suXiDeTVM4?-*lq" x="150" y="20"><field name="Formular">v = u + at</field><field name="Find">FindSy</field></block><block type="value" id="r=X:$XyOj-l0WqgR{(tQ" x="350" y="20"><field name="Value">ValueSx</field><field name="NAME">0</field></block></xml>';
   const toolboxCategories = {
     kind: "categoryToolbox",
     contents: [
       {
         kind: "category",
-        name: "Logic",
-        colour: "#5C81A6",
-        contents: [
-          {
-            kind: "block",
-            type: "controls_if",
-          },
-          {
-            kind: "block",
-            type: "logic_compare",
-          },
-        ],
-      },
-      {
-        kind: "category",
-        name: "Math",
-        colour: "#5CA65C",
-        contents: [
-          {
-            kind: "block",
-            type: "math_round",
-          },
-          {
-            kind: "block",
-            type: "math_number",
-          },
-        ],
-      },
-      {
-        kind: "category",
-        name: "Custom",
+        name: "สูตรการคำนวณ",
         colour: "#5CA699",
         contents: [
           {
             kind: "block",
             type: "a_stable",
+          },
+          {
+            kind: "block",
+            type: "v_stable",
           },
           {
             kind: "block",
