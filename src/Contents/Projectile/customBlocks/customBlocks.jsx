@@ -5,10 +5,10 @@ Blockly.Blocks['value'] = {
     this.appendDummyInput()
         .appendField("ค่าตัวแปร");
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["Sx","ValueSx"], ["Vx","ValueVx"], ["t","Valuet"], ["Sy","ValueSy"], ["Uy","ValueUy"], ["Vy","ValueVy"], ["Ay","ValueAy"]]), "Value")
+        .appendField(new Blockly.FieldDropdown([["Sx","ValueSx"], ["Vx","ValueVx"], ["t","ValueNt"], ["Sy","ValueSy"], ["Uy","ValueUy"], ["Vy","ValueVy"], ["Ay","ValueAy"]]), "Value")
         .appendField("=")
-        .appendField(new Blockly.FieldNumber(0), "NAME");
-    this.setOutput(true, null);
+        .appendField(new Blockly.FieldNumber(0), "ValueNum");
+    this.setOutput(true, "Array");
     this.setColour(330);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -79,23 +79,59 @@ Blockly.Blocks['imported_value'] = {
 };
 
 Blockly.JavaScript['value'] = function(block) {
-  var dropdown_value = block.getFieldValue('Value');
-  var number_name = block.getFieldValue('NAME');
-  // TODO: Assemble JavaScript into code variable.
-  var code = '...';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  var variable = block.getFieldValue('Value');
+  var variableNum = block.getFieldValue('ValueNum');
+  var code = [variable,variableNum];
+
+  return [code, Blockly.JavaScript.ORDER_NONE];;
 };
 
 Blockly.JavaScript['a_stable'] = function(block) {
   var dropdown_formular = block.getFieldValue('Formular');
   var dropdown_find = block.getFieldValue('Find');
-  var value_value_1 = Blockly.JavaScript.valueToCode(block, 'value 1', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_value_2 = Blockly.JavaScript.valueToCode(block, 'value 2', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_value_3 = Blockly.JavaScript.valueToCode(block, 'value 3', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_value_1 = Blockly.JavaScript.valueToCode(block, 'value 1', Blockly.JavaScript.ORDER_ATOMIC)|| '0';
+  var value_value_2 = Blockly.JavaScript.valueToCode(block, 'value 2', Blockly.JavaScript.ORDER_ATOMIC)|| '0';
+  var value_value_3 = Blockly.JavaScript.valueToCode(block, 'value 3', Blockly.JavaScript.ORDER_ATOMIC)|| '0';
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
-  return code;
+ 
+
+
+    switch (dropdown_formular) {
+      case 'v = u + at' :
+        var code2 = () => {
+          switch (dropdown_find) {
+            case 'FindSy':
+              
+              break;
+          
+            default:
+              break;
+          }
+        }
+        break;
+    
+      case 's = ut + 1/2 at^2' :
+        
+        break;  
+
+      case 's = vt - 1/2 at^2':
+        
+        break;
+
+      case 's = (u+v)/2 t':
+        
+        break;
+
+      case 'v^2 = u^2 + 2as':
+        
+      break;
+
+      default:
+        break;
+    }
+  
+  var code = value_value_1[8] + value_value_1[9] + value_value_1[10]
+  return [code, Blockly.JavaScript.ORDER_ATOMIC] ;
 };
 
 Blockly.JavaScript['v_stable'] = function(block) {
