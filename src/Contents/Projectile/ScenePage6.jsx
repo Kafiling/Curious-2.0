@@ -23,7 +23,7 @@ export const BlocklyApp = () => {
   const [javascriptCode, setJavascriptCode] = useState("");
 
   const initialXml =
-  '<xml xmlns="https://developers.google.com/blockly/xml" id="workspaceBlocks" style="display: none"><block type="a_stable" id="@%:]1suXiDeTVM4?-*lq" x="150" y="20"><field name="Formular">v = u + at</field><field name="Find">FindSy</field></block><block type="value" id="r=X:$XyOj-l0WqgR{(tQ" x="350" y="20"><field name="Value">ValueSx</field><field name="NAME">0</field></block></xml>';
+  '<xml xmlns="https://developers.google.com/blockly/xml" id="workspaceBlocks" style="display: none"><block type="a_stable" id="G37iuI)W3b%Lt.^x=O}#" x="170" y="30"><field name="Formular">v = u + at</field><field name="Find">FindVy</field><field name="Input1">InputVy</field><field name="Input2">InputVy</field><field name="Input3">InputVy</field></block></xml>';
   const toolboxCategories = {
     kind: "categoryToolbox",
     contents: [
@@ -42,12 +42,19 @@ export const BlocklyApp = () => {
           },
           {
             kind: "block",
-            type: "value",
+            type: "math_number",
           },
           {
             kind: "block",
-            type: "imported_value",
+            type: "variables_get",
+            
           },
+          {
+            kind: "block",
+            type: "variables_set",
+            
+          },
+          
         ],
       },
     ],

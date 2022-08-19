@@ -24,16 +24,19 @@ Blockly.Blocks['a_stable'] = {
         .appendField(new Blockly.FieldDropdown([["v = u + at","v = u + at"], ["s = ut + 1/2 at^2","s = ut + 1/2 at^2"], ["s = vt - 1/2 at^2","s = vt - 1/2 at^2"], ["s = (u+v)/2 t","s = (u+v)/2 t"], ["v^2 = u^2 + 2as","v^2 = u^2 + 2as"]]), "Formular");
     this.appendDummyInput()
         .appendField("ตัวแปรที่ต้องการหา :")
-        .appendField(new Blockly.FieldDropdown([["Sy","FindSy"], ["Vy","FindVy"], ["Uy","FindUy"], ["Ay","FindAy"], ["t","Findt"]]), "Find");
+        .appendField(new Blockly.FieldDropdown([["Vy","FindVy"], ["Uy","FindUy"], ["Ay","FindAy"], ["Sy","FindSy"], ["t","Findt"]]), "Find");
     this.appendValueInput("value 1")
-        .setCheck(null)
-        .appendField("แทนค่าตัวแปรที่ 1");
+        .setCheck("Number")
+        .appendField("แทนค่าตัวแปรที่ 1")
+        .appendField(new Blockly.FieldDropdown([["Vy","InputVy"], ["Uy","InputUy"], ["Ay","InputAy"], ["Sy","InputSy"], ["t","Inputt"]]), "Input1");
     this.appendValueInput("value 2")
-        .setCheck(null)
-        .appendField("แทนค่าตัวแปรที่ 2");
+        .setCheck("Number")
+        .appendField("แทนค่าตัวแปรที่ 2")
+        .appendField(new Blockly.FieldDropdown([["Vy","InputVy"], ["Uy","InputUy"], ["Ay","InputAy"], ["Sy","InputSy"], ["t","Inputt"]]), "Input2");
     this.appendValueInput("value 3")
-        .setCheck(null)
-        .appendField("แทนค่าตัวแปรที่ 3");
+        .setCheck("Number")
+        .appendField("แทนค่าตัวแปรที่ 3")
+        .appendField(new Blockly.FieldDropdown([["Vy","InputVy"], ["Uy","InputUy"], ["Ay","InputAy"], ["Sy","InputSy"], ["t","Inputt"]]), "Input3");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(230);
@@ -81,33 +84,118 @@ Blockly.Blocks['imported_value'] = {
 Blockly.JavaScript['value'] = function(block) {
   var variable = block.getFieldValue('Value');
   var variableNum = block.getFieldValue('ValueNum');
-  var code = [variable,variableNum];
+  const outputMap = new Map([
+    ['variable', variable],
+    ['variableNum', variableNum]
+  ]);
+  var code = outputMap
 
   return [code, Blockly.JavaScript.ORDER_NONE];;
 };
 
+
 Blockly.JavaScript['a_stable'] = function(block) {
   var dropdown_formular = block.getFieldValue('Formular');
   var dropdown_find = block.getFieldValue('Find');
+  var dropdown_input1 = block.getFieldValue('Input1');
   var value_value_1 = Blockly.JavaScript.valueToCode(block, 'value 1', Blockly.JavaScript.ORDER_ATOMIC)|| '0';
+  var dropdown_input2 = block.getFieldValue('Input2');
   var value_value_2 = Blockly.JavaScript.valueToCode(block, 'value 2', Blockly.JavaScript.ORDER_ATOMIC)|| '0';
+  var dropdown_input3 = block.getFieldValue('Input3');
   var value_value_3 = Blockly.JavaScript.valueToCode(block, 'value 3', Blockly.JavaScript.ORDER_ATOMIC)|| '0';
   // TODO: Assemble JavaScript into code variable.
+ switch (dropdown_input1) {
+  case 'InputVy':
+    var InputVy = value_value_1
+    break;
+
+  case 'InputUy':
+    var InputUy = value_value_1
+    break;
+
+  case 'InputAy':
+    var InputAy = value_value_1
+    break;
+  
+  case 'InputSy':
+    var InputSy = value_value_1
+    break;
+
+  case 'Inputt':
+    var Inputt = value_value_1
+    break;
  
+  default:
+    break;
+ }
+
+ switch (dropdown_input2) {
+  case 'InputVy':
+    var InputVy = value_value_2
+    break;
+
+  case 'InputUy':
+    var InputUy = value_value_2
+    break;
+
+  case 'InputAy':
+    var InputAy = value_value_2
+    break;
+  
+  case 'InputSy':
+    var InputSy = value_value_2
+    break;
+
+  case 'Inputt':
+    var Inputt = value_value_2
+    break;
+ 
+  default:
+    break;
+ }
+
+ switch (dropdown_input3) {
+  case 'InputVy':
+    var InputVy = value_value_3
+    break;
+
+  case 'InputUy':
+    var InputUy =value_value_3
+    break;
+
+  case 'InputAy':
+    var InputAy =value_value_3
+    break;
+  
+  case 'InputSy':
+    var InputSy =value_value_3
+    break;
+
+  case 'Inputt':
+    var Inputt =value_value_3
+    break;
+ 
+  default:
+    break;
+ }
 
 
     switch (dropdown_formular) {
       case 'v = u + at' :
-        var code2 = () => {
+       
           switch (dropdown_find) {
             case 'FindSy':
-              
+              alert('Error : แทนค่าตัวแปรที่ไม่มีในสูตร')
               break;
           
+            case 'FindVy':
+             var Output = Number(InputUy) + (Number(InputAy) * Number(Inputt))
+               
+              break;
             default:
               break;
           }
-        }
+        
         break;
     
       case 's = ut + 1/2 at^2' :
@@ -129,9 +217,17 @@ Blockly.JavaScript['a_stable'] = function(block) {
       default:
         break;
     }
-  
-  var code = value_value_1[8] + value_value_1[9] + value_value_1[10]
-  return [code, Blockly.JavaScript.ORDER_ATOMIC] ;
+  console.log(dropdown_input1) 
+  console.log(value_value_1)
+  console.log(InputVy)
+  console.log(Output)
+  var code = 'a_stable' +  '  ' +'Formular : ' + dropdown_formular +
+  "\r\n" + 'Find : ' + dropdown_find +
+  "\r\n" + dropdown_input1 + ' = ' + value_value_1 + 
+  "\r\n" + dropdown_input2 + ' = ' + value_value_2 +
+  "\r\n" + dropdown_input3 + ' = ' + value_value_3 +
+  "\r\n" + 'Output' + ' = ' + Output
+  return code ;
 };
 
 Blockly.JavaScript['v_stable'] = function(block) {
