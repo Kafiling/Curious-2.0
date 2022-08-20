@@ -98,11 +98,11 @@ Blockly.JavaScript['a_stable'] = function(block) {
   var dropdown_formular = block.getFieldValue('Formular');
   var dropdown_find = block.getFieldValue('Find');
   var dropdown_input1 = block.getFieldValue('Input1');
-  var value_value_1 = Blockly.JavaScript.valueToCode(block, 'value 1', Blockly.JavaScript.ORDER_ATOMIC)|| '0';
+  var value_value_1 = Blockly.JavaScript.valueToCode(block, 'value 1', Blockly.JavaScript.ORDER_NONE)|| '0';
   var dropdown_input2 = block.getFieldValue('Input2');
-  var value_value_2 = Blockly.JavaScript.valueToCode(block, 'value 2', Blockly.JavaScript.ORDER_ATOMIC)|| '0';
+  var value_value_2 = Blockly.JavaScript.valueToCode(block, 'value 2', Blockly.JavaScript.ORDER_NONE)|| '0';
   var dropdown_input3 = block.getFieldValue('Input3');
-  var value_value_3 = Blockly.JavaScript.valueToCode(block, 'value 3', Blockly.JavaScript.ORDER_ATOMIC)|| '0';
+  var value_value_3 = Blockly.JavaScript.valueToCode(block, 'value 3', Blockly.JavaScript.ORDER_NONE)|| '0';
   // TODO: Assemble JavaScript into code variable.
  switch (dropdown_input1) {
   case 'InputVy':
@@ -185,13 +185,33 @@ Blockly.JavaScript['a_stable'] = function(block) {
        
           switch (dropdown_find) {
             case 'FindSy':
+              var OutputType = 'Sy'
               alert('Error : แทนค่าตัวแปรที่ไม่มีในสูตร')
               break;
           
             case 'FindVy':
+             var OutputType = 'Vy'
              var Output = Number(InputUy) + (Number(InputAy) * Number(Inputt))
-               
               break;
+            // u = v - at
+            case 'FindUy':
+              var OutputType = 'Uy'
+              var Output = Number(InputVy) - (Number(InputAy) * Number(Inputt))
+                  
+              break;
+            // v - u = at
+            // (v - u)/t = a
+            case 'FindAy':
+              var OutputType = 'Ay'
+              var Output = (Number(InputVy)-Number(InputUy))/Number(Inputt)
+              break;
+            // (v - u)/a
+            case 'Findt':
+              var OutputType = 't'
+              var Output = (Number(InputVy)-Number(InputUy))/Number(InputAy)
+                  
+              break;
+
             default:
               break;
           }
@@ -199,7 +219,41 @@ Blockly.JavaScript['a_stable'] = function(block) {
         break;
     
       case 's = ut + 1/2 at^2' :
+
+        switch (dropdown_find) {
+          case 'FindSy':
+            var OutputType = 'Sy'
+            var Output = (Number(InputUy) * Number(Inputt)) + (0.5 * Number(InputAy) * Number(Inputt) * Number(Inputt))
+            break;
         
+          case 'FindVy':
+           var OutputType = 'Vy'
+           alert('Error : แทนค่าตัวแปรที่ไม่มีในสูตร')
+            break;
+            
+          // u = v - at
+          case 'FindUy':
+            var OutputType = 'Uy'
+            var Output = Number(InputVy) - (Number(InputAy) * Number(Inputt))
+                
+            break;
+          // v - u = at
+          // (v - u)/t = a
+          case 'FindAy':
+            var OutputType = 'Ay'
+            var Output = (Number(InputVy)-Number(InputUy))/Number(Inputt)
+            break;
+          // (v - u)/a
+          case 'Findt':
+            var OutputType = 't'
+            var Output = (Number(InputVy)-Number(InputUy))/Number(InputAy)
+                
+            break;
+
+          default:
+            break;
+        }
+
         break;  
 
       case 's = vt - 1/2 at^2':
@@ -226,7 +280,7 @@ Blockly.JavaScript['a_stable'] = function(block) {
   "\r\n" + dropdown_input1 + ' = ' + value_value_1 + 
   "\r\n" + dropdown_input2 + ' = ' + value_value_2 +
   "\r\n" + dropdown_input3 + ' = ' + value_value_3 +
-  "\r\n" + 'Output' + ' = ' + Output
+  "\r\n" + 'Output : ' + OutputType + ' = ' + Output
   return code ;
 };
 

@@ -66,7 +66,8 @@ export const BlocklyApp = () => {
 
   return (
     <>
-      <BlocklyWorkspace
+    
+    <BlocklyWorkspace
         toolboxConfiguration={toolboxCategories}
         initialXml={initialXml}
         className="fill-height"
@@ -81,6 +82,8 @@ export const BlocklyApp = () => {
         onWorkspaceChange={workspaceDidChange}
         onXmlChange={setXml}
       />
+    
+      
       <pre id="generated-xml">{xml}</pre>
       <textarea
         id="code"
