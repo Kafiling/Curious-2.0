@@ -230,11 +230,17 @@ Blockly.JavaScript['a_stable'] = function(block) {
            var OutputType = 'Vy'
            alert('Error : แทนค่าตัวแปรที่ไม่มีในสูตร')
             break;
-            
-          // u = v - at
+
+          // u = (2s - t^2 a)/2t ; t != 0
           case 'FindUy':
             var OutputType = 'Uy'
-            var Output = Number(InputVy) - (Number(InputAy) * Number(Inputt))
+            if (Inputt = 0){
+              alert('Error : ตัวส่วนเท่ากับ 0 ; ไม่นิยาม')
+            }
+            else{
+              var Output = ((2*Number(InputSy)) - (Number(InputAy) * Number(Inputt) * Number(Inputt))) / (2 * Number(Inputt))
+            }
+            
                 
             break;
           // v - u = at
@@ -271,7 +277,7 @@ Blockly.JavaScript['a_stable'] = function(block) {
       default:
         break;
     }
-  console.log(dropdown_input1) 
+  console.log((2 * Number(Inputt))) 
   console.log(value_value_1)
   console.log(InputVy)
   console.log(Output)
@@ -280,6 +286,7 @@ Blockly.JavaScript['a_stable'] = function(block) {
   "\r\n" + dropdown_input1 + ' = ' + value_value_1 + 
   "\r\n" + dropdown_input2 + ' = ' + value_value_2 +
   "\r\n" + dropdown_input3 + ' = ' + value_value_3 +
+  "\r\n" +
   "\r\n" + 'Output : ' + OutputType + ' = ' + Output
   return code ;
 };
