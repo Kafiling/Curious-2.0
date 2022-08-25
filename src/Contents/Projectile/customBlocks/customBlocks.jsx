@@ -1,4 +1,7 @@
 import Blockly from 'blockly';
+import {ErrorWrongFind} from './../../../components/alert/Snackbars'
+
+
 
 Blockly.Blocks['value'] = {
   init: function() {
@@ -186,7 +189,8 @@ Blockly.JavaScript['a_stable'] = function(block) {
           switch (dropdown_find) {
             case 'FindSy':
               var OutputType = 'Sy'
-              alert('Error : แทนค่าตัวแปรที่ไม่มีในสูตร')
+              //alert('Error : ต้องการจะหาตัวแปรที่ไม่มีในสูตร')
+              
               break;
           
             case 'FindVy':
