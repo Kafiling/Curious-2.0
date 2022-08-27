@@ -53,11 +53,13 @@ Blockly.Blocks['v_stable'] = {
         .appendField("เลือกตัวแปรที่ต้องการหา")
         .appendField(new Blockly.FieldDropdown([["Vx","FindVx"], ["Sx","FindSx"], ["t","Findt"]]), "Find");
     this.appendValueInput("value 1")
-        .setCheck(null)
-        .appendField("แทนค่าตัวแปรที่ 1");
+        .setCheck("Number")
+        .appendField("แทนค่าตัวแปรที่ 1")
+        .appendField(new Blockly.FieldDropdown([["Vx","InputVx"], ["Sx","InputSx"], ["t","Inputt"]]), "Input1");
     this.appendValueInput("value 2")
-        .setCheck(null)
-        .appendField("แทนค่าตัวแปรที่ 2");
+        .setCheck("Number")
+        .appendField("แทนค่าตัวแปรที่ 2")
+        .appendField(new Blockly.FieldDropdown([["Vx","InputVx"], ["Sx","InputSx"], ["t","Inputt"]]), "Input2");
     this.setColour(120);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -456,10 +458,72 @@ Blockly.JavaScript['a_stable'] = function(block) {
 
 Blockly.JavaScript['v_stable'] = function(block) {
   var dropdown_find = block.getFieldValue('Find');
+  var dropdown_input1 = block.getFieldValue('Input1');
   var value_value_1 = Blockly.JavaScript.valueToCode(block, 'value 1', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_input2 = block.getFieldValue('Input2');
   var value_value_2 = Blockly.JavaScript.valueToCode(block, 'value 2', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  
+  switch (dropdown_input1) {
+    case 'InputVx':
+      var InputVx = value_value_1
+      break;
+  
+    case 'InputSx':
+      var InputSx = value_value_1
+      break;
+    
+    case 'Inputt':
+      var Inputt = value_value_1
+      break;
+   
+    default:
+      break;
+   }
+
+   switch (dropdown_input2) {
+    case 'InputVx':
+      var InputVx = value_value_2
+      break;
+  
+    case 'InputSx':
+      var InputSx = value_value_2
+      break;
+    
+    case 'Inputt':
+      var Inputt = value_value_2
+      break;
+   
+    default:
+      break;
+   }
+
+   switch (dropdown_find) {
+    case 'FindVx':
+      var OutputType = 'Vx'
+      var Output = Number(InputSx)/Number(Inputt)
+      break;
+   
+    case 'FindSx':
+      var OutputType = 'Sx'
+      var Output = (Number(InputVx)*Number(Inputt))
+      break;
+
+    case 'Findt':
+      var OutputType = 't'
+      var Output = Number(InputSx)/Number(InputVx)
+      break;
+
+    default:
+      break;
+   }
+
+  var code = 'v_stable' +  '  ' +'Formular : ' + 'v = s/t' +
+  "\r\n" + 'Find : ' + dropdown_find +
+  "\r\n" + dropdown_input1 + ' = ' + value_value_1 + 
+  "\r\n" + dropdown_input2 + ' = ' + value_value_2 +
+  "\r\n" +
+  "\r\n" + 'Output : ' + OutputType + ' = ' + Output +
+  "\r\n" + '--------------------'
   return code;
 };
 
