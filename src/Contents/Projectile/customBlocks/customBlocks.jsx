@@ -37,8 +37,6 @@ Blockly.Blocks['a_stable'] = {
         .setCheck("Number")
         .appendField("แทนค่าตัวแปรที่ 3")
         .appendField(new Blockly.FieldDropdown([["Vy","InputVy"], ["Uy","InputUy"], ["Ay","InputAy"], ["Sy","InputSy"], ["t","Inputt"]]), "Input3");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
     this.setColour(230);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -60,8 +58,6 @@ Blockly.Blocks['v_stable'] = {
     this.appendValueInput("value 2")
         .setCheck(null)
         .appendField("แทนค่าตัวแปรที่ 2");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
     this.setColour(120);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -301,26 +297,63 @@ Blockly.JavaScript['a_stable'] = function(block) {
             var Output = (Number(InputVy)*Number(Inputt)) - (0.5*Number(InputAy)*Number(Inputt)*Number(Inputt))
             break;
         
+          // s = vt - 1/2 at^2
+          // (s + 1/2at^2)/t = v
           case 'FindVy':
            var OutputType = 'Vy'
-          
+           var Output = (Number(InputSy) + (0.5 * Number(InputAy) * Number(Inputt) * Number(Inputt)))/Number(Inputt)
             break;
-          // u = v - at
+          
           case 'FindUy':
             var OutputType = 'Uy'
             alert('Error : หาค่าตัวแปรที่ไม่มีในสูตร')
                 
             break;
-          // v - u = at
-          // (v - u)/t = a
+          // s = vt - 1/2 at^2
+          // (s - vt)*(-2) / (t^2) = a
           case 'FindAy':
             var OutputType = 'Ay'
-           
+            var Output =  (Number(InputSy) - (Number(InputVy)*Number(Inputt)))*(-2)/(Number(Inputt)*Number(Inputt))
             break;
-          // (v - u)/a
+          // s = vt - 1/2 at^2
+          // -1/2at^2 + vt - s =0
+          // a = -0.5a ,b = v ,c = -s
           case 'Findt':
             var OutputType = 't'
             
+            if (InputAy == 0){
+              var Output = Number(InputSy) / Number(InputVy)
+            }
+            else{
+              // calculate discriminant
+              let discriminant = (Number(InputVy) * Number(InputVy)) - (4 * 0.5 * Number(InputAy) * Number(InputSy))
+              // condition for real and different roots
+                if (discriminant > 0) {
+                  let root1 = (-Number(InputVy) + Math.sqrt(discriminant)) / (2 * (-0.5) * Number(InputAy));
+                  let root2 = (-Number(InputVy) - Math.sqrt(discriminant)) / (2 * (-0.5) * Number(InputAy));
+  
+                  // result
+                  var Output = root1 + ',' + root2
+                 
+                }
+  
+                // condition for real and equal roots
+                else if (discriminant == 0) {
+                  let root1  = -Number(InputVy) / (2 * (-0.5) * Number(InputAy));
+  
+                  // result
+                  var Output = root1 
+                }
+
+            
+              
+
+              // if roots are not real
+              else {
+                var Output = 'คำตอบไม่เป็นสมาชิกจำนวนจริง'
+              
+              }
+            }
                 
             break;
 
@@ -332,11 +365,77 @@ Blockly.JavaScript['a_stable'] = function(block) {
         break;
 
       case 's = (u+v)/2 t':
-        
+        switch (dropdown_find) {
+          case 'FindSy':
+            var OutputType = 'Sy'
+            var Output = (Number(InputUy)+Number(InputVy))/(2*Number(Inputt))
+            break;
+        //s = (u+v)/2 t
+        //2st-u = v
+          case 'FindVy':
+           var OutputType = 'Vy'
+           var Output = (2*Number(InputSy)*Number(Inputt))-Number(InputUy)
+            break;
+         //2st-v = u
+          case 'FindUy':
+            var OutputType = 'Uy'
+            var Output = (2*Number(InputSy)*Number(Inputt))-Number(InputVy)
+                
+            break;
+          
+          case 'FindAy':
+            var OutputType = 'Ay'
+            alert('Error : หาค่าตัวแปรที่ไม่มีในสูตร')
+            break;
+          // s = (u+v)/2 t
+          // t = (u+v)/2s
+          case 'Findt':
+            var OutputType = 't'
+            var Output = (Number(InputUy)+Number(InputVy))/(Number(InputSy)*s)
+                
+            break;
+
+          default:
+            break;
+        }  
+
         break;
 
       case 'v^2 = u^2 + 2as':
+        switch (dropdown_find) {
+          case 'FindSy':
+            var OutputType = 'Sy'
+            var Output = ((Number(InputVy)*Number(InputVy))-(Number(InputUy)*Number(InputUy)))/ (2*Number(InputAy))
+            break;
+        //v^2 = u^2 + 2as
         
+          case 'FindVy':
+           var OutputType = 'Vy'
+           var Output = Math.sqrt((Number(InputUy)*Number(InputUy)) + (2*Number(InputAy)*Number(InputSy)))
+            break;
+         //v^2 - 2as = u^2 
+          case 'FindUy':
+            var OutputType = 'Uy'
+            var Output = Math.sqrt((Number(InputVy)*Number(InputVy)) - (2*Number(InputAy)*Number(InputSy)))
+                
+            break;
+          //v^2 = u^2 + 2as
+          // (v^2 - u^2)/2s = a
+          case 'FindAy':
+            var OutputType = 'Ay'
+            var Output = ((Number(InputVy)*Number(InputVy))-(Number(InputUy)*Number(InputUy)))/ (2*Number(InputSy))
+            break;
+          // s = (u+v)/2 t
+          // t = (u+v)/2s
+          case 'Findt':
+            var OutputType = 't'
+            alert('Error : หาค่าตัวแปรที่ไม่มีในสูตร')
+                
+            break;
+
+          default:
+            break;
+        }  
       break;
 
       default:
