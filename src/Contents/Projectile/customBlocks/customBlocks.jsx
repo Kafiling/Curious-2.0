@@ -186,7 +186,7 @@ Blockly.JavaScript['a_stable'] = function(block) {
           switch (dropdown_find) {
             case 'FindSy':
               var OutputType = 'Sy'
-              alert('Error : แทนค่าตัวแปรที่ไม่มีในสูตร')
+              alert('Error : หาค่าตัวแปรที่ไม่มีในสูตร')
               break;
           
             case 'FindVy':
@@ -228,7 +228,7 @@ Blockly.JavaScript['a_stable'] = function(block) {
         
           case 'FindVy':
            var OutputType = 'Vy'
-           alert('Error : แทนค่าตัวแปรที่ไม่มีในสูตร')
+           alert('Error : หาค่าตัวแปรที่ไม่มีในสูตร')
             break;
 
           // u = (2s - t^2 a)/2t ; t != 0
@@ -293,6 +293,41 @@ Blockly.JavaScript['a_stable'] = function(block) {
         break;  
 
       case 's = vt - 1/2 at^2':
+
+
+        switch (dropdown_find) {
+          case 'FindSy':
+            var OutputType = 'Sy'
+            var Output = (Number(InputVy)*Number(Inputt)) - (0.5*Number(InputAy)*Number(Inputt)*Number(Inputt))
+            break;
+        
+          case 'FindVy':
+           var OutputType = 'Vy'
+          
+            break;
+          // u = v - at
+          case 'FindUy':
+            var OutputType = 'Uy'
+            alert('Error : หาค่าตัวแปรที่ไม่มีในสูตร')
+                
+            break;
+          // v - u = at
+          // (v - u)/t = a
+          case 'FindAy':
+            var OutputType = 'Ay'
+           
+            break;
+          // (v - u)/a
+          case 'Findt':
+            var OutputType = 't'
+            
+                
+            break;
+
+          default:
+            break;
+        }
+
         
         break;
 
