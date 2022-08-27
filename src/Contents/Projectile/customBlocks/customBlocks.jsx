@@ -237,16 +237,52 @@ Blockly.JavaScript['a_stable'] = function(block) {
             var Output = ((Number(InputSy)*2) - ((Number(Inputt) * Number(Inputt))* Number(InputAy))) / (Number(Inputt)+Number(Inputt))
             break;
 
-          // v - u = at
-          // (v - u)/t = a
+          // s = ut + 1/2 at^2
+          // (s - ut)*2/t^2 =a
           case 'FindAy':
             var OutputType = 'Ay'
-            var Output = (Number(InputVy)-Number(InputUy))/Number(Inputt)
+            var Output = ((Number(InputSy)-(Number(InputUy) * Number(Inputt)))*2)/((Number(Inputt)+Number(Inputt)))
             break;
-          // (v - u)/a
+          // s = ut + 1/2 at^2
+          // 0= 0.5at^2 + ut - s
+          // a =0.5a , b=u , c=s
           case 'Findt':
             var OutputType = 't'
-            var Output = (Number(InputVy)-Number(InputUy))/Number(InputAy)
+
+            if (InputAy == 0){
+              var Output = Number(InputSy) / Number(InputUy)
+            }
+            else{
+              // calculate discriminant
+              let discriminant = (Number(InputUy) * Number(InputUy)) - (4 * 0.5*Number(InputAy) * Number(InputSy))
+              // condition for real and different roots
+                if (discriminant > 0) {
+                  let root1 = (-Number(InputUy) + Math.sqrt(discriminant)) / (2 * 0.5 * Number(InputAy));
+                  let root2 = (-Number(InputUy) - Math.sqrt(discriminant)) / (2 * 0.5 * Number(InputAy));
+  
+                  // result
+                  var Output = root1 + ',' + root2
+                 
+                }
+  
+                // condition for real and equal roots
+                else if (discriminant == 0) {
+                  let root1  = -Number(InputUy) / (2 * 0.5 * Number(InputAy));
+  
+                  // result
+                  var Output = root1 
+                }
+
+            
+              
+
+              // if roots are not real
+              else {
+                var Output = 'คำตอบไม่เป็นสมาชิกจำนวนจริง'
+              
+              }
+            }
+                    
                 
             break;
 
