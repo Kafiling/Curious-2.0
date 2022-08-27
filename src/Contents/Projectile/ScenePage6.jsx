@@ -1,7 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Matter from 'matter-js';
-import { color } from '@mui/system';
-import Checkbox from '@mui/material/Checkbox';
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import Slider from '@mui/material/Slider';
+
 
 import { BlocklyWorkspace } from "react-blockly";
 import Blockly from "blockly";
@@ -82,7 +84,7 @@ export const BlocklyApp = () => {
     <BlocklyWorkspace
         toolboxConfiguration={toolboxCategories}
         initialXml={initialXml}
-        className="fill-height"
+        className="blockly-fill-height"
         workspaceConfiguration={{
           grid: {
             spacing: 20,
@@ -99,11 +101,11 @@ export const BlocklyApp = () => {
       
       <textarea
         id="code"
-        style={{ height: "200px", width: "400px" }}
+        style={{ height: "400px", width: "70vw" }}
         value={javascriptCode}
         readOnly
       ></textarea>
-      <button onClick={() => runCode()}>Run</button>
+  
     </>
   );
 }
@@ -143,7 +145,12 @@ export const Scene = () => {
     setSomeStateValue(!someStateValue);
   };
 
-  
+  //MUI Slider
+  const [valueSlider, setValueSlider] = React.useState(1);
+
+  const handleChangeSlider = (event, newValue) => {
+    setValueSlider(newValue);
+  };
 
   useEffect(() => {
     var render = Render.create({
@@ -239,7 +246,7 @@ export const Scene = () => {
       );
       
      //set velocity base on viewport size
-      Matter.Body.setVelocity(circle, {x: width/400, y: -height/200 })
+      Matter.Body.setVelocity(circle, {x: (width/400)*valueSlider, y: (-height/200)*valueSlider })
       
       }
   }, [someStateValue]);
@@ -275,6 +282,7 @@ export const Scene = () => {
       <p style={{color: 'cornflowerblue'}}>&#9632; ความเร็วลัพธ์</p>
       <p style={{color: 'orange'}}>&#9632; ความเร็วแกน X,Y</p>
       <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      
       <button
         style={{
           cursor: 'pointer',
@@ -287,6 +295,17 @@ export const Scene = () => {
       >
        ยิงกระสุน
       </button>
+      
+      <Box sx={{ width: 'auto' }}>
+      <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
+        <p style={{color: 'white'}} >ความเร็ว</p>
+        <Slider min={0.1} step={0.1} max={2} aria-label="Volume" value={valueSlider} onChange={handleChangeSlider} valueLabelDisplay="auto"/>
+        
+      </Stack>
+      
+    </Box>
+    
+      
     </div>
     
   );
