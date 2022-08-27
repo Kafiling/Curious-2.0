@@ -1,7 +1,4 @@
 import Blockly from 'blockly';
-import {ErrorWrongFind} from './../../../components/alert/Snackbars'
-
-
 
 Blockly.Blocks['value'] = {
   init: function() {
@@ -189,8 +186,7 @@ Blockly.JavaScript['a_stable'] = function(block) {
           switch (dropdown_find) {
             case 'FindSy':
               var OutputType = 'Sy'
-              //alert('Error : ต้องการจะหาตัวแปรที่ไม่มีในสูตร')
-              
+              alert('Error : แทนค่าตัวแปรที่ไม่มีในสูตร')
               break;
           
             case 'FindVy':
@@ -238,15 +234,9 @@ Blockly.JavaScript['a_stable'] = function(block) {
           // u = (2s - t^2 a)/2t ; t != 0
           case 'FindUy':
             var OutputType = 'Uy'
-            if (Inputt = 0){
-              alert('Error : ตัวส่วนเท่ากับ 0 ; ไม่นิยาม')
-            }
-            else{
-              var Output = ((2*Number(InputSy)) - (Number(InputAy) * Number(Inputt) * Number(Inputt))) / (2 * Number(Inputt))
-            }
-            
-                
+            var Output = ((Number(InputSy)*2) - ((Number(Inputt) * Number(Inputt))* Number(InputAy))) / (Number(Inputt)+Number(Inputt))
             break;
+
           // v - u = at
           // (v - u)/t = a
           case 'FindAy':
@@ -281,9 +271,7 @@ Blockly.JavaScript['a_stable'] = function(block) {
       default:
         break;
     }
-  console.log((2 * Number(Inputt))) 
-  console.log(value_value_1)
-  console.log(InputVy)
+
   console.log(Output)
   var code = 'a_stable' +  '  ' +'Formular : ' + dropdown_formular +
   "\r\n" + 'Find : ' + dropdown_find +
@@ -291,7 +279,8 @@ Blockly.JavaScript['a_stable'] = function(block) {
   "\r\n" + dropdown_input2 + ' = ' + value_value_2 +
   "\r\n" + dropdown_input3 + ' = ' + value_value_3 +
   "\r\n" +
-  "\r\n" + 'Output : ' + OutputType + ' = ' + Output
+  "\r\n" + 'Output : ' + OutputType + ' = ' + Output +
+  "\r\n" + '--------------------'
   return code ;
 };
 

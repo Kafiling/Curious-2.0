@@ -64,6 +64,18 @@ export const BlocklyApp = () => {
     setJavascriptCode(code);
   }
 
+  function runCode(workspace) {
+    window.LoopTrap = 1000;
+    Blockly.JavaScript.INFINITE_LOOP_TRAP = 'if(--window.LoopTrap == 0) throw "Infinite loop.";\n';
+    var code = Blockly.JavaScript.workspaceToCode(workspace);
+    Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+    try {
+      eval(code);
+    } catch (e) {
+      alert('Bad code: ' + e);
+    }
+  }
+
   return (
     <>
     
@@ -84,13 +96,14 @@ export const BlocklyApp = () => {
       />
     
       
-      <pre id="generated-xml">{xml}</pre>
+      
       <textarea
         id="code"
         style={{ height: "200px", width: "400px" }}
         value={javascriptCode}
         readOnly
       ></textarea>
+      <button onClick={() => runCode()}>Run</button>
     </>
   );
 }
