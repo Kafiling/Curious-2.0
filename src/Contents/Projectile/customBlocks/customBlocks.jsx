@@ -37,7 +37,7 @@ Blockly.Blocks['a_stable'] = {
         .setCheck("Number")
         .appendField("แทนค่าตัวแปรที่ 3")
         .appendField(new Blockly.FieldDropdown([["Vy","InputVy"], ["Uy","InputUy"], ["Ay","InputAy"], ["Sy","InputSy"], ["t","Inputt"]]), "Input3");
-    this.setColour(230);
+    this.setColour(20);
  this.setTooltip("");
  this.setHelpUrl("");
   }

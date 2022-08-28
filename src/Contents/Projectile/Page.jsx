@@ -3,8 +3,10 @@ import './Content.css'
 import './../../components/Highlight.css'
 import {Button} from './../../components/pages/Button'
 import QuestionForm from './../../components/QuestionForm'
+import ShowAnswer from './../../components/ShowAnswer'
 import {Scene as MatterP3} from './ScenePage3';
 import {App as MatterP6} from './ScenePage6';
+import {App as MatterP7} from './ScenePage7';
 import {MathJax} from 'better-react-mathjax'
 
 export default function Projectile() {
@@ -35,7 +37,11 @@ var [page, setPage] = useState(1);
 
     case 6:
       return (<Page6/>)
-      break;     
+      break;    
+
+    case 7:
+      return (<Page7/>)
+      break;   
 
     default:
     return (<Page404/>)
@@ -250,22 +256,50 @@ function Page5(){
          (กำหนด <MathJax inline>{'\\(g = 10 m/s^{2} \\)'}</MathJax>)
         </p>
        <div className='MatterScene'><MatterP6/></div>
-        
-        <p>จะสังเกตเห็นว่าการเคลื่อนที่ของลูกกระสุนปืนใหญ่มีลักษณะโค้งพาราโบลา เมื่อวิเคราห์การเคลื่อนที่ของกระสุนแล้วจะพบว่ากระสุนออกจากกระบอกปืนด้วยความเร็วแนวเฉียงดังรูป
-
-        </p>
-
-        <img 
-        className='content-img'
-        src="https://steamuserimages-a.akamaihd.net/ugc/781871757549675033/5F6623AB658C5F0278A46826103FC9735368A5C8/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" 
-        alt="display image" 
-        />
+       <span className='highlight-yellow highlight-block '>
+       <ShowAnswer 
+          QuestionPage = '6'
+          Explanation1 = 'ตอบ กระสุนออกจากกระบอกปืนมีความเร็วแกนดิ่งเท่ากับ 50 m/s'
+          />
+       </span>
 
         <div className='btn-warpper'>
-        <Button buttonSize = 'btn--wide'  buttonColor='blue' buttonPos='left' onClick = {() => setPage(2)} >Previous page</Button>
-        <Button buttonSize = 'btn--wide'  buttonColor='green' buttonPos='right' onClick = {() => setPage(4)} >Next page</Button>
+        <Button buttonSize = 'btn--wide'  buttonColor='blue' buttonPos='left' onClick = {() => setPage(5)} >Previous page</Button>
+        <Button buttonSize = 'btn--wide'  buttonColor='green' buttonPos='right' onClick = {() => setPage(7)} >Next page</Button>
         </div>
         
+       
+     
+  
+        </div>
+  </>
+  )
+  }
+
+  function Page7(){
+    return (
+  <>
+  <div className="ProgessBar"><progress value="30" max="100"></progress></div>
+  <div className="content-wrapper">
+        <h2>การเคลื่อนที่วิถีโค้ง (Projectile Motion)</h2>
+        <p>จากข้อที่แล้ว หากกระสุนออกจากกระบอกด้วยความเร็วแนวดิ่ง 100 m/s และความเร็วแนวราบเท่าเดิม กระสุนจะตกห่างจากจุดที่ยิงกี่เมตร</p>
+        <p>ลูกกระสุนปืนใหญ่ถูกยิงออกมาจากปากระบอก โดยถือว่ากระบอกมีความสูงน้อยมาก 
+         (กำหนด <MathJax inline>{'\\(g = 10 m/s^{2} \\)'}</MathJax>)
+        </p>
+       <div className='MatterScene'><MatterP7/></div>
+       <span className='highlight-yellow highlight-block '>
+       <ShowAnswer 
+          QuestionPage = '7'
+          Explanation1 = 'ตอบ กระสุนจะตกห่างจากจุดที่ยิง 400 m'
+          />
+       </span>
+
+        <div className='btn-warpper'>
+        <Button buttonSize = 'btn--wide'  buttonColor='blue' buttonPos='left' onClick = {() => setPage(6)} >Previous page</Button>
+        <Button buttonSize = 'btn--wide'  buttonColor='green' buttonPos='right' onClick = {() => setPage(8)} >Next page</Button>
+        </div>
+        
+       
      
   
         </div>
