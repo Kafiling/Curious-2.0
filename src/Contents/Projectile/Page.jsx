@@ -1,6 +1,7 @@
 import React ,{useState , useRef, useContext}from 'react'
 import './Content.css'
 import './../../components/Highlight.css'
+import {Link } from 'react-router-dom'
 import {Button} from './../../components/pages/Button'
 import QuestionForm from './../../components/QuestionForm'
 import ShowAnswer from './../../components/ShowAnswer'
@@ -43,6 +44,9 @@ var [page, setPage] = useState(1);
       return (<Page7/>)
       break;   
 
+    case 8:
+      return (<Page8/>)
+      break;
     default:
     return (<Page404/>)
       break;
@@ -306,6 +310,38 @@ function Page5(){
   </>
   )
   }
+
+  function Page8(){
+    return (
+      <>
+      <div className="ProgessBar"><progress value="30" max="100"></progress></div>
+      <div className="finalpage-container">
+            <h2>การเคลื่อนที่วิถีโค้ง (Projectile Motion)</h2>
+            <img 
+            className='content-img'
+            src="https://steamuserimages-a.akamaihd.net/ugc/781871757549675033/5F6623AB658C5F0278A46826103FC9735368A5C8/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" 
+            alt="display image" 
+            />
+            <h2>เรียนจบเรียนแล้ว!</h2>
+            <h3>บทเรียนดีๆโดยทีมงาน Keep-curious</h3>
+            <br/>
+            <br/>
+            <br/>
+            <Button buttonSize = 'btn--wide'  buttonColor='blue' buttonPos='middle'  ><Link to = "/v1.0/courses" >Back to Courses</Link></Button>
+            <br/>
+            <br/>
+            
+            
+           
+         
+      
+            </div>
+      </>
+  )
+  }
+
+
+
 
   function Page404(){
     return(
