@@ -14,6 +14,9 @@ a {
     margin-left: auto;
     margin-right: auto;
 }
+
+
+
 .content-wrapper {
     font-size: calc(15px + 0.390625vw);
     margin-top: 5vh;
@@ -32,7 +35,7 @@ a {
 
  .ProgessBar{
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: calc(5px + 0.390625vh);
     display: flex;
     justify-content: center;

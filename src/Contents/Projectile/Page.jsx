@@ -14,6 +14,10 @@ export default function Projectile() {
 // Set Page
 var [page, setPage] = useState(1);
 
+function handleSetPage(page){
+  window.scrollTo({top: 0, left: 0, behavior: 'smooth' })
+  setPage(page)
+}
   switch (page) {
     
     case 1:
@@ -72,7 +76,7 @@ var [page, setPage] = useState(1);
         </span>
         </p>
         <div className='btn-warpper'>
-        <Button buttonSize = 'btn--wide'  buttonColor='green' buttonPos='right' onClick = {() => setPage(2)} >Next page</Button>
+        <Button buttonSize = 'btn--wide'  buttonColor='green' buttonPos='right' onClick = {() => handleSetPage(2)} >Next page</Button>
         </div>
         
   
@@ -97,8 +101,8 @@ var [page, setPage] = useState(1);
         />
         
         <div className='btn-warpper'>
-        <Button buttonSize = 'btn--wide'  buttonColor='blue' buttonPos='left' onClick = {() => setPage(1)} >Previous page</Button>
-        <Button buttonSize = 'btn--wide'  buttonColor='green' buttonPos='right' onClick = {() => setPage(3)} >Next page</Button>
+        <Button buttonSize = 'btn--wide'  buttonColor='blue' buttonPos='left' onClick = {() => handleSetPage(1)} >Previous page</Button>
+        <Button buttonSize = 'btn--wide'  buttonColor='green' buttonPos='right' onClick = {() => handleSetPage(3)} >Next page</Button>
         </div>
         
   
@@ -127,8 +131,8 @@ var [page, setPage] = useState(1);
         />
 
         <div className='btn-warpper'>
-        <Button buttonSize = 'btn--wide'  buttonColor='blue' buttonPos='left' onClick = {() => setPage(2)} >Previous page</Button>
-        <Button buttonSize = 'btn--wide'  buttonColor='green' buttonPos='right' onClick = {() => setPage(4)} >Next page</Button>
+        <Button buttonSize = 'btn--wide'  buttonColor='blue' buttonPos='left' onClick = {() => handleSetPage(2)} >Previous page</Button>
+        <Button buttonSize = 'btn--wide'  buttonColor='green' buttonPos='right' onClick = {() => handleSetPage(4)} >Next page</Button>
         </div>
         
      
@@ -172,8 +176,8 @@ var [page, setPage] = useState(1);
        
 
         <div className='btn-warpper'>
-        <Button buttonSize = 'btn--wide'  buttonColor='blue' buttonPos='left' onClick = {() => setPage(3)} >Previous page</Button>
-        <Button buttonSize = 'btn--wide'  buttonColor='green' buttonPos='right' onClick = {() => setPage(5)} >Next page</Button>
+        <Button buttonSize = 'btn--wide'  buttonColor='blue' buttonPos='left' onClick = {() => handleSetPage(3)} >Previous page</Button>
+        <Button buttonSize = 'btn--wide'  buttonColor='green' buttonPos='right' onClick = {() => handleSetPage(5)} >Next page</Button>
         </div>
         
      
@@ -238,8 +242,8 @@ function Page5(){
       
         <p><br/><span className='highlight-blue'>โดยทั้งแกนราบและดิ่งมีความสัมพันธุ์คือใช้ตัวแปร t (เวลาร่วมกัน)</span></p>
         <div className='btn-warpper'>
-        <Button buttonSize = 'btn--wide'  buttonColor='blue' buttonPos='left' onClick = {() => setPage(4)} >Previous page</Button>
-        <Button buttonSize = 'btn--wide'  buttonColor='green' buttonPos='right' onClick = {() => setPage(6)} >Next page</Button>
+        <Button buttonSize = 'btn--wide'  buttonColor='blue' buttonPos='left' onClick = {() => handleSetPage(4)} >Previous page</Button>
+        <Button buttonSize = 'btn--wide'  buttonColor='green' buttonPos='right' onClick = {() => handleSetPage(6)} >Next page</Button>
         </div>
         
      
@@ -268,8 +272,8 @@ function Page5(){
        </span>
 
         <div className='btn-warpper'>
-        <Button buttonSize = 'btn--wide'  buttonColor='blue' buttonPos='left' onClick = {() => setPage(5)} >Previous page</Button>
-        <Button buttonSize = 'btn--wide'  buttonColor='green' buttonPos='right' onClick = {() => setPage(7)} >Next page</Button>
+        <Button buttonSize = 'btn--wide'  buttonColor='blue' buttonPos='left' onClick = {() => handleSetPage(5)} >Previous page</Button>
+        <Button buttonSize = 'btn--wide'  buttonColor='green' buttonPos='right' onClick = {() => handleSetPage(7)} >Next page</Button>
         </div>
         
        
@@ -299,8 +303,8 @@ function Page5(){
        </span>
 
         <div className='btn-warpper'>
-        <Button buttonSize = 'btn--wide'  buttonColor='blue' buttonPos='left' onClick = {() => setPage(6)} >Previous page</Button>
-        <Button buttonSize = 'btn--wide'  buttonColor='green' buttonPos='right' onClick = {() => setPage(8)} >Next page</Button>
+        <Button buttonSize = 'btn--wide'  buttonColor='blue' buttonPos='left' onClick = {() => handleSetPage(6)} >Previous page</Button>
+        <Button buttonSize = 'btn--wide'  buttonColor='green' buttonPos='right' onClick = {() => handleSetPage(8)} >Next page</Button>
         </div>
         
        
@@ -317,13 +321,17 @@ function Page5(){
       <div className="ProgessBar"><progress value="30" max="100"></progress></div>
       <div className="finalpage-container">
             <h2>การเคลื่อนที่วิถีโค้ง (Projectile Motion)</h2>
+            <br/>
+            <br/>
             <img 
             className='content-img'
-            src="https://steamuserimages-a.akamaihd.net/ugc/781871757549675033/5F6623AB658C5F0278A46826103FC9735368A5C8/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" 
+            src="https://firebasestorage.googleapis.com/v0/b/keep-curious-v2.appspot.com/o/Homepage%2Ffinalpage.svg?alt=media&token=97aea829-16e4-47a1-a404-a8d8b1029bea" 
             alt="display image" 
             />
-            <h2>เรียนจบเรียนแล้ว!</h2>
-            <h3>บทเรียนดีๆโดยทีมงาน Keep-curious</h3>
+            <br/>
+            <br/>
+            <h2>เรียนจบบทเรียนแล้ว!</h2>
+            <h3>คุณสามารถเรียนรู้บทเรียนอื่นๆของ Keep-curious ได้</h3>
             <br/>
             <br/>
             <br/>
