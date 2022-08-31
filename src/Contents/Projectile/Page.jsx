@@ -69,7 +69,7 @@ function handleSetPage(page){
         </p>
         <img 
         className='content-img'
-        src="https://steamuserimages-a.akamaihd.net/ugc/781871757549675033/5F6623AB658C5F0278A46826103FC9735368A5C8/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" 
+        src="https://firebasestorage.googleapis.com/v0/b/keep-curious-v2.appspot.com/o/Content%2F1%2FProj1.png?alt=media&token=cf4b0333-d752-4c7f-bf14-fdb22a59867e" 
         alt="display image" 
         />
         <p><span className='highlight-red highlight-block '>Disclaimer : การเคลื่อนที่แนวโค้งในกิจกรรมนี้เป้นการเคลื่อนที่แนวโค้งอย่างง่าย นั้นคือจะไม่คำนึงถึงผลของแรงต้านอากาศ และ การสูญเสียพลังงานให้สิ่งแวดล้อม เพื่อให้เห็นความสัมพันธุ์เชิงตัวแปรในการเคลื่อนที่อย่างชัดเจน
@@ -96,7 +96,7 @@ function handleSetPage(page){
         </p>
         <img 
         className='content-img'
-        src="https://steamuserimages-a.akamaihd.net/ugc/781871757549675033/5F6623AB658C5F0278A46826103FC9735368A5C8/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" 
+        src="https://firebasestorage.googleapis.com/v0/b/keep-curious-v2.appspot.com/o/Content%2F1%2FProj1.png?alt=media&token=cf4b0333-d752-4c7f-bf14-fdb22a59867e" 
         alt="display image" 
         />
         
