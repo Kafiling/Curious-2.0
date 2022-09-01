@@ -34,7 +34,7 @@ export default function Courses() {
         <CardMedia
           component="img"
           height="280"
-          image="/static/images/cards/contemplative-reptile.jpg"
+          image="https://firebasestorage.googleapis.com/v0/b/keep-curious-v2.appspot.com/o/Content%2F1%2FProj2.png?alt=media&token=b7bd588b-1666-4752-80b3-a77d4d2ad7fc"
           alt="green iguana"
         />
         <CardContent>
@@ -49,16 +49,16 @@ export default function Courses() {
     </Card>
 
     <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
+      <CardActionArea href='/courses/newton_cradle'>
         <CardMedia
           component="img"
           height="280"
           image="https://firebasestorage.googleapis.com/v0/b/keep-curious-v2.appspot.com/o/Homepage%2Fwarning.svg?alt=media&token=bd2a340d-cf84-41a9-a3e1-4b19261b89ab"
-          alt="Coming soon"
+          alt=":MiniLab : NewtonCradle "
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Coming soon
+          MiniLab : NewtonCradle
           </Typography>
           <Typography variant="body2" color="text.secondary">
           "Formal education will make you a living; <br/>self-education will make you a fortune."<br/> 
