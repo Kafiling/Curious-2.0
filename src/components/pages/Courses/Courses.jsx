@@ -80,7 +80,7 @@ export default function Courses() {
           MiniLab : Slingshot
           </Typography>
           <Typography variant="body2" color="text.secondary">
-          ลูกตุ้มของนิวตัน เป็นอุปกรณ์ที่แสดงให้เห็นถึงการอนุรักษ์โมเมนตัมและการอนุรักษ์พลังงานที่มีทรงกลมแกว่ง<br/> 
+          หนังสติ๊ก(Slingshot) มีหลักการทำงานโดยให้งาน เป็นพลังงานศักย์ยืดหยุ่นเปลี่ยนเป็นพลังงานจลน์<br/> 
           </Typography>
         </CardContent>
       </CardActionArea>
