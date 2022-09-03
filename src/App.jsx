@@ -33,7 +33,7 @@ import Help from './components/pages/Help/Help'
 import Courses from './components/pages/Courses/Courses'
 import Projectile from './Contents/Projectile/Page';
 import NewtonCradle from './Contents/NewtonCradle/Page';
-
+import Slingshot from './Contents/Slingshot/Page';
 
 
 function App() {
@@ -56,6 +56,7 @@ function App() {
           <Route path='/courses' element={<Courses/>} exact></Route>
           <Route path='/courses/projectile_1' element={<Projectile/>} exact></Route>
           <Route path='/courses/newton_cradle' element={<NewtonCradle/>} exact></Route>
+          <Route path='/courses/slingshot' element={<Slingshot/>} exact></Route>
       </Routes>
       <Footer/>
 

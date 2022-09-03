@@ -67,7 +67,26 @@ export default function Courses() {
       </CardActionArea>
     </Card>
 
-   
+    <Card sx={{ maxWidth: 345 }}>
+      <CardActionArea href='/courses/slingshot'>
+        <CardMedia
+          component="img"
+          height="280"
+          image="https://firebasestorage.googleapis.com/v0/b/keep-curious-v2.appspot.com/o/Content%2F2%2FNewton.png?alt=media&token=0916182f-672c-4e86-a1e9-ed7fbd40cf4b"
+          alt=":Slingshot "
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+          MiniLab : Slingshot
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+          ลูกตุ้มของนิวตัน เป็นอุปกรณ์ที่แสดงให้เห็นถึงการอนุรักษ์โมเมนตัมและการอนุรักษ์พลังงานที่มีทรงกลมแกว่ง<br/> 
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
+
+    
       </Stack>
     </div>
   );
