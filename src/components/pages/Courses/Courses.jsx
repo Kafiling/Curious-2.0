@@ -72,7 +72,7 @@ export default function Courses() {
         <CardMedia
           component="img"
           height="280"
-          image="https://firebasestorage.googleapis.com/v0/b/keep-curious-v2.appspot.com/o/Content%2F2%2FNewton.png?alt=media&token=0916182f-672c-4e86-a1e9-ed7fbd40cf4b"
+          image="https://firebasestorage.googleapis.com/v0/b/keep-curious-v2.appspot.com/o/Content%2F3%2FSling1.png?alt=media&token=f589297d-74e6-4455-b8cd-b63cbb8da8cd"
           alt=":Slingshot "
         />
         <CardContent>
