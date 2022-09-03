@@ -61,7 +61,7 @@ function handleSetPage(page){
   function Page1(){
     return (
   <>
-  <div className="ProgessBar"><progress value="10" max="100"></progress></div>
+  <div className="ProgessBar"><progress value="12.5" max="100"></progress></div>
   <div className="content-wrapper">
         <h2>การเคลื่อนที่วิถีโค้ง (Projectile Motion)</h2>
         <p>เมื่อเราขว้างวัตถุออกไป จะสังเกตว่า<span className='highlight-yellow'>การเคลื่อนที่ของวัตถุนั้นจะเป็นวิถีโค้ง</span> จากจุดที่ขว้างวัตถุ วัตถุเคลื่อนที่ขึ้นไปเรื่อยๆ ความเร็วของวัตถุลดลงเรื่อยๆ จนถึงจุดสูงสุดวัตถุก็ค่อยๆตกลงมา ทำให้ความเร็วเพิ่มขึ้น จนตกถึงพื้น
@@ -88,7 +88,7 @@ function handleSetPage(page){
   function Page2(){
     return (
   <>
-  <div className="ProgessBar"><progress value="20" max="100"></progress></div>
+  <div className="ProgessBar"><progress value="25" max="100"></progress></div>
   <div className="content-wrapper">
         <h2>การเคลื่อนที่วิถีโค้ง (Projectile Motion)</h2>
         <p>ปืนใหญ่เป็นอาวุรโบราณ ประดิษฐ์ขึ้นในสมัยราชวงค์หมิง (ช่วงต้นศตวรรษที่ 13) ปืนใหญ่ทำงานโดยยิงหัวกระสุนด้วยแรงดันจากการเผาไหม้ดินกระสุน แรงดันจะดันกระสุนออกมาจากกระบอกด้วยความเร็วสูง
@@ -114,7 +114,7 @@ function handleSetPage(page){
   function Page3(){
     return (
   <>
-  <div className="ProgessBar"><progress value="30" max="100"></progress></div>
+  <div className="ProgessBar"><progress value="37.5" max="100"></progress></div>
   <div className="content-wrapper">
         <h2>การเคลื่อนที่วิถีโค้ง (Projectile Motion)</h2>
         <p>ลองสังเกตการลักษณะเคลื่อนที่รวมถึงการเปลี่ยนแปลงของความเร็วความเร่งของลูกปืนใหญ่จาก Simulation ด้านล่างนี้</p>
@@ -145,7 +145,7 @@ function handleSetPage(page){
   function Page4(){
     return (
   <>
-  <div className="ProgessBar"><progress value="40" max="100"></progress></div>
+  <div className="ProgessBar"><progress value="50" max="100"></progress></div>
   <div className="content-wrapper">
         <h2>การเคลื่อนที่วิถีโค้ง (Projectile Motion)</h2>
         <p>เมื่อแยกองค์ประกอบของความเร็วลูกกระสุนออกเป็นแกน x และ y และ จะพบความสัมพันธุ์ดังภาพ</p>
@@ -202,7 +202,7 @@ function handleSetPage(page){
 function Page5(){
     return (
   <>
-  <div className="ProgessBar"><progress value="50" max="100"></progress></div>
+  <div className="ProgessBar"><progress value="62.5" max="100"></progress></div>
   <div className="content-wrapper">
         <h2>การเคลื่อนที่วิถีโค้ง (Projectile Motion)</h2>
         <p>การคำนวณการเคลื่อนที่แนวโค้ง (Projectile) ต้องแยกคิดการเคลื่อนที่ 2 แนวการเคลื่อนที่</p>
@@ -256,7 +256,7 @@ function Page5(){
   function Page6(){
     return (
   <>
-  <div className="ProgessBar"><progress value="30" max="100"></progress></div>
+  <div className="ProgessBar"><progress value="75" max="100"></progress></div>
   <div className="content-wrapper">
         <h2>การเคลื่อนที่วิถีโค้ง (Projectile Motion)</h2>
         <p>เมื่อทราบดังนั้นแล้ว เราลองนำสิ่งที่เรียนมาใช้ดูดีกว่า
@@ -287,7 +287,7 @@ function Page5(){
   function Page7(){
     return (
   <>
-  <div className="ProgessBar"><progress value="30" max="100"></progress></div>
+  <div className="ProgessBar"><progress value="82.5" max="100"></progress></div>
   <div className="content-wrapper">
         <h2>การเคลื่อนที่วิถีโค้ง (Projectile Motion)</h2>
         <p>จากข้อที่แล้ว หากกระสุนออกจากกระบอกด้วยความเร็วแนวดิ่ง 100 m/s และความเร็วแนวราบเท่าเดิม กระสุนจะตกห่างจากจุดที่ยิงกี่เมตร</p>
@@ -318,7 +318,7 @@ function Page5(){
   function Page8(){
     return (
       <>
-      <div className="ProgessBar"><progress value="30" max="100"></progress></div>
+      <div className="ProgessBar"><progress value="100" max="100"></progress></div>
       <div className="finalpage-container">
             <h2>การเคลื่อนที่วิถีโค้ง (Projectile Motion)</h2>
             <br/>

@@ -46,7 +46,7 @@ function handleSetPage(page){
   function Page1(){
     return (
   <>
-  <div className="ProgessBar"><progress value="10" max="100"></progress></div>
+  <div className="ProgessBar"><progress value="20" max="100"></progress></div>
   <div className="content-wrapper">
         <h2>การทดลอง Newton's Cradle</h2>
         <p>ลูกตุ้มของนิวตัน เป็นอุปกรณ์ที่แสดงให้เห็นถึงการอนุรักษ์โมเมนตัมและการอนุรักษ์พลังงานที่มีทรงกลมแกว่ง เมื่อทรงกลมหนึ่งที่ปลายยกขึ้นและปล่อยออกมันจะกระทบกับทรงกลมที่หยุดนิ่งส่งแรงผ่านทรงกลมที่อยู่กับที่ซึ่งดันทรงกลมสุดท้ายขึ้นไป ทรงกลมสุดท้ายหมุนไปข้างหลังและกระทบกับทรงกลมที่อยู่เกือบนิ่งโดยทำซ้ำเอฟเฟกต์ในทิศทางตรงกันข้าม</p>
@@ -68,7 +68,7 @@ function handleSetPage(page){
   function Page2(){
     return (
   <>
-  <div className="ProgessBar"><progress value="10" max="100"></progress></div>
+  <div className="ProgessBar"><progress value="40" max="100"></progress></div>
   <div className="content-wrapper">
         <h2>การทดลอง Newton's Cradle</h2>
         <p>เริ่มต้นด้วยการดึงกลับ 1 ลูก ยิ่งคุณดึงลูกบอลกลับมามากเท่าไหร่ คุณก็จะยิ่งให้พลังงานมากขึ้นเท่านั้น พลังงานศักย์นี้ถูกสร้างขึ้นเนื่องจากคุณได้เคลื่อนลูกบอลไปยังจุดที่สูงกว่า</p>
@@ -90,7 +90,7 @@ function handleSetPage(page){
   function Page3(){
     return (
   <>
-  <div className="ProgessBar"><progress value="10" max="100"></progress></div>
+  <div className="ProgessBar"><progress value="60" max="100"></progress></div>
   <div className="content-wrapper">
         <h2>การทดลอง Newton's Cradle</h2>
         <p>ดูการถ่ายโอนพลังงานและโมเมนตัมจากลูกแรกไปยังลูกสุดท้าย ท้ายที่สุด นี่คือส่วนความบันเทิงของ Newton's Cradle เมื่อลูกบอลลูกแรกไปถึงด้านล่างและกระทบกับลูกที่สอง ลูกบอลจะหยุด โมเมนตัมและพลังงานจลน์ที่ลูกบอลได้รับระหว่างการตกจะถูกโอนผ่านลูกบอลตรงกลางและส่งผ่านไปยังลูกบอลสุดท้าย ซึ่งจะเหวี่ยงออกจากลูกบอลอีกลูก</p>
@@ -113,7 +113,7 @@ function handleSetPage(page){
   function Page4(){
     return (
   <>
-  <div className="ProgessBar"><progress value="10" max="100"></progress></div>
+  <div className="ProgessBar"><progress value="80" max="100"></progress></div>
   <div className="content-wrapper">
         <h2>การทดลอง Newton's Cradle</h2>
         <p>ปรับแต่งการทดลองโดยดึงกลับ 2 ลูก โมเมนตัมเท่ากับมวลที่เคลื่อนที่คูณด้วยความเร็ว (ไม่ใช่ความเร็ว) ที่มันเคลื่อนที่ เนื่องจากต้องรักษาโมเมนตัมนี้ไว้ บอล 2 ลูกที่อยู่ท้ายสุดจะถูกผลักออกจากบอลกลางแทนที่จะเป็นเพียง 1 ลูก นอกจาก 2 บอลที่ปลายแต่ละด้านเคลื่อนที่</p>
@@ -135,7 +135,7 @@ function handleSetPage(page){
   function Page5(){
     return (
       <>
-      <div className="ProgessBar"><progress value="30" max="100"></progress></div>
+      <div className="ProgessBar"><progress value="100" max="100"></progress></div>
       <div className="finalpage-container">
             <h2>การทดลอง Newton's Cradle</h2>
             <br/>
