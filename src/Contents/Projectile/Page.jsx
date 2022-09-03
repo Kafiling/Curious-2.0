@@ -324,7 +324,7 @@ function Page5(){
             <br/>
             <br/>
             <img 
-            className='content-img'
+            className='final-img'
             src="https://firebasestorage.googleapis.com/v0/b/keep-curious-v2.appspot.com/o/Homepage%2Ffinalpage.svg?alt=media&token=97aea829-16e4-47a1-a404-a8d8b1029bea" 
             alt="display image" 
             />
@@ -335,7 +335,7 @@ function Page5(){
             <br/>
             <br/>
             <br/>
-            <Button buttonSize = 'btn--wide'  buttonColor='blue' buttonPos='middle'  ><Link to = "/v1.0/courses" >Back to Courses</Link></Button>
+            <Button buttonSize = 'btn--wide'  buttonColor='blue' buttonPos='middle'  ><Link to = "/courses" >Back to Courses</Link></Button>
             <br/>
             <br/>
             

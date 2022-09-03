@@ -49,92 +49,131 @@ export const App = () => {
       }
     });
 
-    const ball1 = Bodies.circle(200+(-1*constraintDistance), 100, 25, {
+    const ball1 = Bodies.circle(100+(-1*constraintDistance), 100, 25, {
       restitution: restitution,
       frictionAir: frictionAir,
       friction: 0,
       render: {
-        fillStyle: 'yellow'
+        fillStyle: 'orange'
       }
     });
     
     const constraint1 = Constraint.create({
-      pointA: { x: 200+(0*constraintDistance), y: 100 },
+      pointA: { x: 100+(0*constraintDistance), y: 100 },
       bodyB: ball1,
       length: constraintLength,
       
       
     });
 
-    const ball2 = Bodies.circle(200+(1*constraintDistance), 175, 25, {
+    const ball2 = Bodies.circle(100+(1*constraintDistance), 175, 25, {
       restitution: restitution,
       frictionAir: frictionAir,
       friction: 0,
       render: {
-        fillStyle: 'yellow'
+        fillStyle: 'orange'
       }
     });
     
     const constraint2 = Constraint.create({
-      pointA: { x: 200+(1*constraintDistance), y: 100 },
+      pointA: { x: 100+(1*constraintDistance), y: 100 },
       bodyB: ball2,
       length: constraintLength,
       
       
     });
 
-    const ball3 = Bodies.circle(200+(2*constraintDistance), 175, 25, {
+    const ball3 = Bodies.circle(100+(2*constraintDistance), 175, 25, {
       restitution: restitution,
       frictionAir: frictionAir,
       friction: 0,
       render: {
-        fillStyle: 'yellow'
+        fillStyle: 'orange'
       }
     });
     
     const constraint3 = Constraint.create({
-      pointA: { x: 200+(2*constraintDistance), y: 100 },
+      pointA: { x: 100+(2*constraintDistance), y: 100 },
       bodyB: ball3,
       length: constraintLength,
       
       
     });
 
-    const ball4 = Bodies.circle(200+(3*constraintDistance), 175, 25, {
+    const ball4 = Bodies.circle(100+(3*constraintDistance), 175, 25, {
       restitution: restitution,
       frictionAir: frictionAir,
       friction: 0,
       render: {
-        fillStyle: 'yellow'
+        fillStyle: 'orange'
       }
     });
     
     const constraint4 = Constraint.create({
-      pointA: { x: 200+(3*constraintDistance), y: 100 },
+      pointA: { x: 100+(3*constraintDistance), y: 100 },
       bodyB: ball4,
       length: constraintLength,
       
       
     });
 
-    const ball5 = Bodies.circle(200+(4*constraintDistance), 175, 25, {
+    const ball5 = Bodies.circle(100+(4*constraintDistance), 175, 25, {
       restitution: restitution,
       frictionAir: frictionAir,
       friction: 0,
       render: {
-        fillStyle: 'yellow'
+        fillStyle: 'orange'
       }
     });
     
     const constraint5 = Constraint.create({
-      pointA: { x: 200+(4*constraintDistance), y: 100 },
+      pointA: { x: 100+(4*constraintDistance), y: 100 },
       bodyB: ball5,
       length: constraintLength,
       
       
     });
+
+
+    const ball6 = Bodies.circle(100+(5*constraintDistance), 175, 25, {
+      restitution: restitution,
+      frictionAir: frictionAir,
+      friction: 0,
+      render: {
+        fillStyle: 'orange'
+      }
+    });
+    
+    const constraint6 = Constraint.create({
+      pointA: { x: 100+(5*constraintDistance), y: 100 },
+      bodyB: ball6,
+      length: constraintLength,
+      
+      
+    });
+
+
+    const ball7 = Bodies.circle(100+(6*constraintDistance), 175, 25, {
+      restitution: restitution,
+      frictionAir: frictionAir,
+      friction: 0,
+      render: {
+        fillStyle: 'orange'
+      }
+    });
+    
+    const constraint7 = Constraint.create({
+      pointA: { x: 100+(6*constraintDistance), y: 100 },
+      bodyB: ball7,
+      length: constraintLength,
+      
+      
+    });
+
+
+
     World.add(engine.world, [floor, ball1,constraint1,ball2,constraint2,ball3,constraint3
-      ,ball4,constraint4,ball5,constraint5]);
+      ,ball4,constraint4,ball5,constraint5,ball6,constraint6,ball7,constraint7]);
 
     Matter.Runner.run(engine)
     Render.run(render);

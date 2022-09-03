@@ -53,15 +53,15 @@ export default function Courses() {
         <CardMedia
           component="img"
           height="280"
-          image="https://firebasestorage.googleapis.com/v0/b/keep-curious-v2.appspot.com/o/Homepage%2Fwarning.svg?alt=media&token=bd2a340d-cf84-41a9-a3e1-4b19261b89ab"
+          image="https://firebasestorage.googleapis.com/v0/b/keep-curious-v2.appspot.com/o/Content%2F2%2FNewton.png?alt=media&token=0916182f-672c-4e86-a1e9-ed7fbd40cf4b"
           alt=":MiniLab : NewtonCradle "
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-          MiniLab : NewtonCradle
+          MiniLab : Newton's Cradle
           </Typography>
           <Typography variant="body2" color="text.secondary">
-          "Formal education will make you a living; <br/>self-education will make you a fortune."<br/> 
+          ลูกตุ้มของนิวตัน เป็นอุปกรณ์ที่แสดงให้เห็นถึงการอนุรักษ์โมเมนตัมและการอนุรักษ์พลังงานที่มีทรงกลมแกว่ง<br/> 
           </Typography>
         </CardContent>
       </CardActionArea>

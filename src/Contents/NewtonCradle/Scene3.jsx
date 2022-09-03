@@ -54,7 +54,7 @@ export const App = () => {
       frictionAir: frictionAir,
       friction: 0,
       render: {
-        fillStyle: 'yellow'
+        fillStyle: 'cornflowerblue'
       }
     });
     
@@ -66,12 +66,12 @@ export const App = () => {
       
     });
 
-    const ball2 = Bodies.circle(200+(1*constraintDistance), 175, 25, {
+    const ball2 = Bodies.circle(200+(0*constraintDistance), 100, 25, {
       restitution: restitution,
       frictionAir: frictionAir,
       friction: 0,
       render: {
-        fillStyle: 'yellow'
+        fillStyle: 'cornflowerblue'
       }
     });
     
@@ -88,7 +88,7 @@ export const App = () => {
       frictionAir: frictionAir,
       friction: 0,
       render: {
-        fillStyle: 'yellow'
+        fillStyle: 'cornflowerblue'
       }
     });
     
@@ -105,7 +105,7 @@ export const App = () => {
       frictionAir: frictionAir,
       friction: 0,
       render: {
-        fillStyle: 'yellow'
+        fillStyle: 'cornflowerblue'
       }
     });
     
@@ -122,7 +122,7 @@ export const App = () => {
       frictionAir: frictionAir,
       friction: 0,
       render: {
-        fillStyle: 'yellow'
+        fillStyle: 'cornflowerblue'
       }
     });
     
