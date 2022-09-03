@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes ,Route } from 'react-router-dom'
 
 //import src
@@ -32,10 +33,10 @@ import Login from './components/pages/Login/Login'
 import Help from './components/pages/Help/Help'
 import Courses from './components/pages/Courses/Courses'
 import Projectile from './Contents/Projectile/Page';
-import NewtonCradle from './Contents/NewtonCradle/Page';
-import Slingshot from './Contents/Slingshot/Page';
-
-
+//import NewtonCradle from './Contents/NewtonCradle/Page';
+//import Slingshot from './Contents/Slingshot/Page';
+const Slingshot = lazy(() => import('./Contents/Slingshot/Page'));
+const NewtonCradle = lazy(() => import('./Contents/NewtonCradle/Page'));
 function App() {
   const [count, setCount] = useState(0)
 
@@ -47,7 +48,9 @@ function App() {
     <ThemeProvider theme={THEME}>
     
     <Navbar/>
+    <Suspense fallback={<div>Loading...</div>}>
       <Routes >
+      
           <Route path='/' element={<Home/>} exact></Route>
           <Route path='/playground' element={<Playground/>} exact></Route>
           <Route path='/aboutUs' element={<AboutUs/>} exact></Route>
@@ -57,7 +60,11 @@ function App() {
           <Route path='/courses/projectile_1' element={<Projectile/>} exact></Route>
           <Route path='/courses/newton_cradle' element={<NewtonCradle/>} exact></Route>
           <Route path='/courses/slingshot' element={<Slingshot/>} exact></Route>
+      
+          
+          
       </Routes>
+      </Suspense>
       <Footer/>
 
     </ThemeProvider>
